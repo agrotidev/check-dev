@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('departamentos', function (Blueprint $table) {
+        Schema::create('departamentos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('cod_departamento')->unique();
+
             $table->string('nome')->unique();
             $table->boolean('ativo')->default(true);
+            
             $table->timestamps();
         });
     }
@@ -29,8 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('departamentos', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('departamentos');
     }
 };

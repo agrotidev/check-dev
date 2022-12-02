@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('setores', function (Blueprint $table) {
+        Schema::create('setores', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('departamento');
 
@@ -33,8 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('setores', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('setores');
     }
 };
