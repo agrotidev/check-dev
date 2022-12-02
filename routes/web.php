@@ -30,4 +30,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     // ADMIN DASHBOARD
     Route::get('/', [AdminController::class, 'index'])->name('dash');
+
+    // DEPARTAMENTO
+    Route::delete('/departamento/{cod_departamento}', [DepartamentoController::class, 'destroy'])->name('departamento.destroy');
+    Route::get('/departamento/create', [DepartamentoController::class, 'create'])->name('departamento.create');
+    Route::post('/departamento', [DepartamentoController::class, 'store'])->name('departamento.store');
+    Route::get('/departamento', [DepartamentoController::class, 'index'])->name('departamento.index');
+    
 });
