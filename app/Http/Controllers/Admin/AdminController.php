@@ -20,6 +20,7 @@ class AdminController extends Controller
 
     public function login(Request $request)
     {
+        dd($request->all);
         $request['remember'] = empty($request->remember) ? false : true;
         dd($request);
         $this->validaLogin($request);

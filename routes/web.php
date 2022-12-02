@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\Auth\AuthAdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -27,4 +28,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/reset/{token}', [AuthAdminController::class, 'showResetPassword'])->name('reset.token');
     Route::post('/reset', [AuthAdminController::class, 'sendResetPassword'])->name('reset');
 
+    // ADMIN DASHBOARD
+    Route::get('/', [AdminController::class, 'index'])->name('dash');
 });
