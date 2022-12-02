@@ -13,6 +13,7 @@
 @section('app-menu')
     <li><a class="app-menu__item active" href="{{route('admin.dash')}}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
     <li><a class="app-menu__item" href="{{route('admin.departamento.index')}}"><i class="app-menu__icon fa fa-object-group"></i><span class="app-menu__label">Departamentos</span></a></li>
+    <li><a class="app-menu__item" href="{{route('admin.setor.index')}}"><i class="app-menu__icon fa fa-object-group"></i><span class="app-menu__label">Setores</span></a></li>
     {{-- <li><a class="app-menu__item" href="{{route('admin.exemple')}}"><i class="app-menu__icon fa fa-object-group"></i><span class="app-menu__label">Exemplo</span></a></li> --}}
 @endsection
 

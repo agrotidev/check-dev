@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\Auth\AuthAdminController;
 use App\Http\Controllers\Admin\DepartamentoController;
+use App\Http\Controllers\Admin\SetorController;
 use App\Http\Controllers\Manager\Auth\AuthManagerController;
 use App\Http\Controllers\Manager\ManagerController;
 use Illuminate\Support\Facades\Route;
@@ -62,5 +63,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/departamento/create', [DepartamentoController::class, 'create'])->name('departamento.create');
     Route::post('/departamento', [DepartamentoController::class, 'store'])->name('departamento.store');
     Route::get('/departamento', [DepartamentoController::class, 'index'])->name('departamento.index');
+
+    // SETOR
+    Route::get('/setor', [SetorController::class, 'index'])->name('setor.index');
     
 });

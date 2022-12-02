@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -21,7 +22,9 @@ class UserSeed extends Seeder
                 'code' => 8146,
                 'name' => 'Thiago',
                 'email' => 'thiago@email.com',
-                'password' => bcrypt('123456')
+                'password' => bcrypt('123456'),
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]
         ]);
     }
