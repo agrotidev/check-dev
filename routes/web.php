@@ -3,12 +3,33 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\Auth\AuthAdminController;
 use App\Http\Controllers\Admin\DepartamentoController;
+use App\Http\Controllers\Manager\Auth\AuthManagerController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+// MANAGER
+Route::prefix('')->group(function() {
+
+    // AUTH
+    Route::get('/login', [AuthManagerController::class, 'index'])->name('login');
+    Route::post('/login', [AuthManagerController::class, 'login'])->name('manager.login');
+    Route::get('/logout', function () {
+        Auth::guard('web')->logout();
+        return redirect()->action([AuthManagerController::class, 'login']);
+    })->name('manager.logout');
+
+    // RECOVER PASSWORD MANAGER
+    Route::get('/forgot', [AuthManagerController::class, 'showForgot'])->name('manager.forgot');
+    Route::post('/forgot', [AuthManagerController::class, 'sendForgot'])->name('manager.forgot');
+    Route::get('/reset/{token}', [AuthManagerController::class, 'showResetPassword'])->name('manager.reset.token');
+    Route::post('/reset', [AuthManagerController::class, 'sendResetPassword'])->name('manager.reset');
+    
 });
 
 
