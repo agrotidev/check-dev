@@ -1,6 +1,6 @@
 @extends('layouts.manager')
 
-@section('title', 'Dashboard!')
+@section('title', 'Dashboard')
 
 @section('content')
   @include('layouts.components.page-name', ['name' => 'Dashboard'])

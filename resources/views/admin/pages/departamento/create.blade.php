@@ -17,7 +17,7 @@
         <form method="post" action="{{ route('admin.departamento.store') }}">
           @csrf
           <div class="form-group">
-              <label class="control-label">Cadastro!</label>
+              <label class="control-label">Cadastro Departamento</label>
 
               <input onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control my-2  col-md-3" name="cod_departamento" type="text" placeholder="Digite o código do departamento">
             

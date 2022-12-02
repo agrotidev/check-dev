@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard!')
+@section('title', 'Dashboard Admin')
 
 @section('content')
-  @include('layouts.components.page-name', ['name' => 'Dashboard'])
+  @include('layouts.components.page-name', ['name' => 'Dashboard Admin'])
 
   <div class="row">
     <div class="col-md-12">
