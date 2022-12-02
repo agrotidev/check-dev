@@ -10,7 +10,7 @@
     <div class="col-md-12">
       <div class="tile">
         <div class="form-group">
-          <a href="#"><button class="btn btn-primary btn-sm mx-2" type="button">Adicionar</button></a>
+          <a href="{{ route('admin.setor.create') }}"><button class="btn btn-primary btn-sm mx-2" type="button">Adicionar</button></a>
           <button class="btn btn-warning btn-sm mx-2" type="button">Importar</button>
           <button class="btn btn-info btn-sm mx-2" type="button">Exportar</button>
         </div>
