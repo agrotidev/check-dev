@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer('code')->unique();
             $table->string('name');
             $table->string('email')->unique();
+            $table->boolean('active')->default(true);
+
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

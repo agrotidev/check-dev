@@ -58,8 +58,6 @@ class Handler extends ExceptionHandler
 
         $guard = Arr::first($exception->guards());
 
-        dd($guard);
-
         switch ($guard) {
             case 'admin':
                 $login = 'admin.login';
