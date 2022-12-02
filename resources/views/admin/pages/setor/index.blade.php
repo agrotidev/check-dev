@@ -18,8 +18,8 @@
           <table class="table table-striped table-sm">
             <thead>
               <tr class="bg-primary text-white">
-                <th width="60">COD.</th>
-                <th>Departamento</th>
+                <th width="80">COD.</th>
+                <th width="200">Departamento</th>
                 <th>Setor</th>
                 <th>Ativo</th>
                 {{-- <th class="text-center" width="150">Ações</th> --}}
@@ -31,7 +31,7 @@
               @foreach ($setores as $setor)
               <tr>
                 <td  id="demoNotify">{{$setor->cod_setor}}</td>
-                <td>{{ $setores->departamento->name}}</td>
+                <td>{{ $setor->departamento }}</td>
                 <td>{{$setor->nome}}</td>
                 <td>{{ $setor->ativo == '1' ? 'SIM' : 'NÃO' }}</td>
                 <td>

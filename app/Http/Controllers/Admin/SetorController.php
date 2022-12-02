@@ -17,7 +17,7 @@ class SetorController extends Controller
 
     public function index()
     {
-        $setores = $this->repository->latest()->paginate(20);
+        $setores = Setor::with(['departamento'])->paginate(20);
 
         return view('admin.pages.setor.index', [
             'setores' => $setores
