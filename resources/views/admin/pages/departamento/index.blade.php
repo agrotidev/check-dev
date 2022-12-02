@@ -3,7 +3,7 @@
 @section('title', 'Dashboard!')
 
 @section('content')
-  @include('layouts.components.page-name', ['name' => 'Departamento'])
+  @include('layouts.components.page-name', ['name' => 'Departamentos'])
 
 
   <div class="row">
