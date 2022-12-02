@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::table('departamentos', function (Blueprint $table) {
-            //
+            $table->bigIncrements('id');
+            $table->bigInteger('cod_departamento')->unique();
+            $table->string('nome')->unique();
+            $table->boolean('ativo')->default(true);
+            $table->timestamps();
         });
     }
 
