@@ -34,7 +34,7 @@ Route::prefix('')->group(function() {
 
     // MANAGER DASHBOARD
     Route::get('/dashboard', [ManagerController::class, 'index'])->name('manager.dash');
-    
+
 });
 
 
@@ -69,5 +69,5 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/setor', [SetorController::class, 'store'])->name('setor.store');
     Route::get('/setor/create', [SetorController::class, 'create'])->name('setor.create');
     Route::get('/setor', [SetorController::class, 'index'])->name('setor.index');
-    
+
 });
