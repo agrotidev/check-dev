@@ -14,6 +14,7 @@
           <button class="btn btn-warning btn-sm mx-2" type="button">Importar</button>
           <button class="btn btn-info btn-sm mx-2" type="button">Exportar</button>
         </div>
+
         <div class="table-responsive-sm">
           <table class="table table-striped table-sm">
             <thead>
@@ -30,9 +31,14 @@
               <tr>
                 <td  id="demoNotify">{{$departamento->cod_departamento}}</td>
                 <td>{{$departamento->nome}}</td>
+                {{-- <td>Otto</td> --}}
                 <td>{{ $departamento->ativo == '1' ? 'SIM' : 'NÃO' }}</td>
+                {{-- <td >
+                  <a href="#" class="btn btn-outline-info btn-sm">Visualizar</a>
+                </td> --}}
                 <td>
                     <button onclick="alerta({{ $departamento->id}})" class="btn btn-warning fa fa-pencil-square-o" type="submit"></button>
+
                 </td>
                 <td>
                     <form action="{{ route('admin.departamento.destroy', $departamento->id) }}" method="POST">

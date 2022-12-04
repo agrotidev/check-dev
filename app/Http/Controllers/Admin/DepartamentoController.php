@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Departamento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class DepartamentoController extends Controller
@@ -25,28 +26,34 @@ class DepartamentoController extends Controller
         ]);
     }
 
-    public function create() 
+    public function create()
     {
         return view('admin.pages.departamento.create');
     }
 
     public function store(Request $request)
     {
+
+        if (Departamento::where('cod_departamento',$request->cod_departamento)->exists()) {
+            return redirect()->back()->withInputs($request->only('departamento'))->with('error', 'Já existe departamento com esse código!');
+        }
+
         $request['ativo']  = empty($request->ativo) ? false : true;
-        
-            $validator = Validator::make($request->all(), [
-                'nome' => 'required|string|min:3',
-                'cod_departamento' => 'required|numeric'
-            ]);
 
-            if ($validator->passes()) {
+        $validator = Validator::make($request->all(), [
+            'nome' => 'required|string|min:3',
+            'cod_departamento' => 'required|numeric'
+        ]);
 
-                $this->repository->create($request->all());
+        if ($validator->passes()) {
 
-                return redirect()->route('admin.departamento.index');
-            } else {
-                return redirect()->back()->withInputs($request->only('departamento'))->with('error', 'Existe campos vazio!');
-            }        
+            $this->repository->create($request->all());
+
+            return redirect()->route('admin.departamento.index');
+        } else {
+            return redirect()->back()->withInputs($request->only('departamento'))->with('error', 'Existe campos vazio!');
+        }
+
     }
 
     public function destroy($id)
@@ -55,6 +62,6 @@ class DepartamentoController extends Controller
 
 
 
-        // dd($departamento); 
+        // dd($departamento);
     }
 }
