@@ -22,7 +22,7 @@
               <input onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control my-2  col-md-3" value="{{old('cod_departamento')}}" name="cod_departamento" type="text" placeholder="Digite o código do departamento">
 
 
-            <input class="form-control col-md-6" value="{{old('nome')}}" name="nome" type="text" placeholder="Digite o nome do departamento">
+            <input class="form-control col-md-6"  name="nome" type="text" placeholder="Digite o nome do departamento">
 
             <label class="control-label pt-2">Ativo</label>
             <div class="toggle-flip">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Departamento;
 use App\Models\Setor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -18,7 +19,7 @@ class SetorController extends Controller
 
     public function index()
     {
-        $setores = Setor::with(['departamento'])->paginate(20);
+        $setores = Setor::with(['departamento'])->latest()->paginate(20);
 
         return view('admin.pages.setor.index', [
             'setores' => $setores
@@ -27,21 +28,24 @@ class SetorController extends Controller
 
     public function create()
     {
-        return view('admin.pages.setor.create');
+        $departamentos = Departamento::where('ativo', true)->get();
+
+        return view('admin.pages.setor.create', ['departamentos' => $departamentos]);
     }
 
     public function store(Request $request)
     {
-        // dd($request->all());
-        $request['ativo'] = empty($request->ativo) ? false : true;
+        $request['ativo']  = (!isset($request['ativo']))? false : true;
 
+        
         $validator = Validator::make($request->all(), [
             'cod_setor' => 'required|numeric',
             'departamento' => 'required|numeric',
             'nome' => 'required|string|min:3'
         ]);
-
+        
         if ($validator->passes()) {
+            // dd($request->all());
             
             $this->repository->create($request->all());
 

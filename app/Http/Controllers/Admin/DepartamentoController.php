@@ -38,7 +38,8 @@ class DepartamentoController extends Controller
             return redirect()->back()->withInputs($request->only('departamento'))->with('error', 'Já existe departamento com esse código!');
         }
 
-        $request['ativo']  = empty($request->ativo) ? false : true;
+        $request['ativo']  = (!isset($request['ativo']))? false : true;
+
 
         $validator = Validator::make($request->all(), [
             'nome' => 'required|string|min:3',
