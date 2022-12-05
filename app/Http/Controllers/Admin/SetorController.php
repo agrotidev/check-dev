@@ -59,4 +59,15 @@ class SetorController extends Controller
     {
         $setor = $this->repository->where('id', $id)->first();
     }
+
+    public function edit($id)
+    {
+        $setor = Setor::with('departamento')->find($id);
+        $departamentos = Departamento::where('ativo', true)->get();
+
+        return view('admin.pages.setor.edit', [
+            'setor' => $setor,
+            'departamentos' => $departamentos
+        ]);
+    }
 }

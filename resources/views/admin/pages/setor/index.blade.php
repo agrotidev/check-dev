@@ -35,7 +35,8 @@
                 <td>{{$setor->nome}}</td>
                 <td>{{ $setor->ativo == '1' ? 'SIM' : 'NÃO' }}</td>
                 <td>
-                    <button onclick="alerta({{ $setor->id}})" class="btn btn-outline-warning btn-sm" type="submit">Editar</button>
+                    <a href="{{ route('admin.setor.edit', $setor->id) }}" class="btn btn-warning fa fa-pencil-square-o" type="submit"></a>
+                    {{-- <a href="{{ route('admin.setor.edit', $setor->id) }}"  onclick="alerta({{ $setor->id}})" class="btn btn-warning fa fa-pencil-square-o" type="submit"></a> --}}
                 </td>
               </tr>                  
               @endforeach
