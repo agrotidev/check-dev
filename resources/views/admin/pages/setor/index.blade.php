@@ -23,7 +23,7 @@
                 <th>Setor</th>
                 <th>Ativo</th>
                 {{-- <th class="text-center" width="150">Ações</th> --}}
-                <th class="text-center" width="60"></th>
+                <th class="text-center" width="60">Editar</th>
                 {{-- <th class="text-center" width="60"></th> --}}
               </tr>
             </thead>
