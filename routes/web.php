@@ -65,6 +65,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/departamento', [DepartamentoController::class, 'index'])->name('departamento.index');
 
     // SETOR
+    Route::put('/setor/{id}/editar', [SetorController::class, 'update'])->name('setor.update');
     Route::get('/setor/{id}/editar', [SetorController::class, 'edit'])->name('setor.edit');
     Route::delete('/setor/{cod_setor}', [Setor::class, 'destroy'])->name('setor.destory');
     Route::post('/setor', [SetorController::class, 'store'])->name('setor.store');

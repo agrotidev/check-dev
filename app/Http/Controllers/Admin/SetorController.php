@@ -45,7 +45,6 @@ class SetorController extends Controller
         ]);
         
         if ($validator->passes()) {
-            // dd($request->all());
             
             $this->repository->create($request->all());
 
@@ -69,5 +68,12 @@ class SetorController extends Controller
             'setor' => $setor,
             'departamentos' => $departamentos
         ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request['ativo']  = (!isset($request['ativo']))? false : true;
+
+        dd($request->all());
     }
 }

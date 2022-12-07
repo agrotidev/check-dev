@@ -14,12 +14,14 @@
       @endif
 
       <div class="col-md-12 mx-0 px-0">
-        <form method="post" action="{{ route('admin.setor.store') }}">
+        <form method="POST" action="{{ route('admin.setor.update', $setor->id) }}">
           @csrf
+          @method('put')
+          
           <div class="form-group">
 
             <label >Cod. Setor</label>
-            <input onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control my-2  col-md-3" name="cod_setor" type="text" placeholder="Digite o código do setor">
+            <input disabled onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control my-2  col-md-3" name="cod_setor" value="{{ $setor->nome }}">
 
             <label >Nome</label>
             <input class="form-control col-md-6" name="nome" type="text" placeholder="Digite o nome do setor" value="{{ $setor->nome }}">
