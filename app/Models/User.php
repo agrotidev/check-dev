@@ -14,6 +14,9 @@ class User extends Authenticatable
 
     protected $fillable = [
         'setor',
+        'modulo',
+        'ismanager',
+        'islider',
         'code',
         'active',
         'name',

@@ -12,6 +12,7 @@
 
 @section('app-menu')
 <li><a class="app-menu__item active" href="{{route('manager.dash')}}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
+<li><a class="app-menu__item" href="{{route('manager.dash')}}"><i class="app-menu__icon fa fa-clipboard"></i><span class="app-menu__label">Checklist</span></a></li>
 @endsection
 
 @section('content')

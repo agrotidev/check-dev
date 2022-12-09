@@ -19,6 +19,9 @@ class UserSeed extends Seeder
         DB::table('users')->insert([
             [
                 'setor' => '1',
+                'modulo' => '1',
+                'ismanager' => true,
+                'islider' => true,
                 'code' => 8146,
                 'name' => 'Thiago',
                 'email' => 'thiago@email.com',
