@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('tarefas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('checklist');
-            $table->unsignedBigInteger('categoria_tarefas');
+            $table->unsignedBigInteger('categoria_tarefa');
 
             $table->string('nome');
             $table->string('descricao')->nullable();
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->boolean('ativo')->default(true);
 
             $table->foreign('checklist')->references('id')->on('checklists');
-            $table->foreign('categoria_tarefas')->references('id')->on('categoria_tarefas');
+            $table->foreign('categoria_tarefa')->references('id')->on('categoria_tarefas');
 
             $table->timestamps();
         });
