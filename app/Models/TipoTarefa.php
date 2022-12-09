@@ -9,7 +9,11 @@ class TipoTarefa extends Model
 {
     use HasFactory;
 
-    protected $table = 'categoria_tarefas';
+    protected $table = 'tipo_tarefas';
 
-    protected $fillable = ['descricao', 'nome', 'ativo'];
+    protected $fillable = [
+        'descricao',
+        'nome',
+        'ativo'
+    ];
 }
