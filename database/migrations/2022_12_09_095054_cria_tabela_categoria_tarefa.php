@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('categoria_tarefas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('descricao')->nullable();
             $table->string('nome')->unique();
+            $table->string('descricao')->nullable();
             $table->boolean('ativo')->default(true);
             
             $table->timestamps();

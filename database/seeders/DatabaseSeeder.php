@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SetorSeed::class);
         $this->call(AdminSeeed::class);
         $this->call(UserSeed::class);
+        $this->call(CategoriaTarefa::class);
     }
 }
