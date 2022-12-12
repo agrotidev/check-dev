@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('setor');
             $table->unsignedBigInteger('tipo_tarefas');
-            $table->unsignedBigInteger('users');
+            $table->unsignedBigInteger('user');
 
 
             $table->string('nome');
@@ -26,7 +26,7 @@ return new class extends Migration
 
             $table->foreign('setor')->references('id')->on('setores');
             $table->foreign('tipo_tarefas')->references('id')->on('tipo_tarefas');
-            $table->foreign('users')->references('id')->on('users');
+            $table->foreign('user')->references('id')->on('users');
             
             $table->timestamps();
         });

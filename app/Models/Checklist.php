@@ -14,7 +14,7 @@ class Checklist extends Model
     protected $fillable = [
         'setor',
         'tipo_tarefas',
-        'users',  
+        'user',  
         'nome',
         'descricao',
         'ativo'

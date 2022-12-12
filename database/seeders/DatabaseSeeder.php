@@ -27,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeed::class);
         $this->call(CategoriaTarefa::class);
         $this->call(TipoTarefa::class);
+        $this->call(Checklist::class);
     }
 }
