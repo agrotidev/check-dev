@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('nome')->unique();
             $table->string('descricao')->nullable();
+            $table->float('peso', 8, 2)->default(0);
             $table->boolean('ativo')->default(true);
             
             $table->timestamps();

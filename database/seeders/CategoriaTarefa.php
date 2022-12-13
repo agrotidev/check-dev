@@ -18,15 +18,17 @@ class CategoriaTarefa extends Seeder
     {
         DB::table('categoria_tarefas')->insert([
             [
-                'nome' => 'LIMPEZA',
-                'descricao' => 'Categoria Limpeza',
+                'nome' => 'ORGANIZAÇÃO / LIMPEZA',
+                'descricao' => 'Categoria Organização e Limpeza',
+                'peso' => 2.5,
                 'ativo' => true,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'nome' => 'ORGANIZACAO',
-                'descricao' => 'Categoria Organização',
+                'nome' => 'MEIO AMBIENTE',
+                'descricao' => 'Categoria Meio Ambiente',
+                'peso' => 2.5,
                 'ativo' => true,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -34,6 +36,7 @@ class CategoriaTarefa extends Seeder
             [
                 'nome' => 'SEGURANCA',
                 'descricao' => 'Categoria Segurança',
+                'peso' => 5.0,
                 'ativo' => true,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')

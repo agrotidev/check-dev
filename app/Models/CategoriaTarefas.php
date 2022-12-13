@@ -11,6 +11,6 @@ class CategoriaTarefas extends Model
 
     protected $table = 'categoria_tarefas';
 
-    protected $fillable = ['nome', 'descricao', 'ativo'];
+    protected $fillable = ['nome', 'descricao', 'peso', 'ativo'];
 
 }
