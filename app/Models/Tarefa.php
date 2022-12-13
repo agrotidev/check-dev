@@ -19,4 +19,10 @@ class Tarefa extends Model
         'valor',
         'ativo'
     ];
+
+
+    public function checklist()
+    {
+        return $this->belongsTo(Checklist::class);
+    }
 }

@@ -20,6 +20,6 @@ class Setor extends Model
 
     public function usuarios()
     {
-        return $this->hasOne(User::class, 'setor', 'cod_setor');
+        return $this->hasOne(User::class, 'setor', 'cod_setor', 'id');
     }
 }
