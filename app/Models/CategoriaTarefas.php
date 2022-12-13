@@ -13,4 +13,10 @@ class CategoriaTarefas extends Model
 
     protected $fillable = ['nome', 'descricao', 'peso', 'ativo'];
 
+
+    public function tarefa()
+    {
+        return $this->belongsTo(Tarefa::class);
+    }
+
 }

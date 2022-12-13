@@ -42,4 +42,11 @@ class Checklist extends Model
     {
         return round(($this->totalPontos() / $this->totalPorcentagem()) * 100, 2);
     }
+
+    public function conforme()
+    {
+        // return  $this->tarefas()
+        //                 ->having('categoria_tarefa', '=', 1)
+        //                 ->get();
+    }
 }
