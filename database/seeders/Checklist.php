@@ -19,10 +19,20 @@ class Checklist extends Seeder
         DB::table('checklists')->insert([
             [
                 'setor' => 1,
-                'tipo_tarefas' => 1,
+                'tipo_tarefas' => 3,
                 'user' => 1,
                 'nome' => 'Checklist 1',
                 'descricao' => 'Checklist 1 - primeiro checklist',
+                'ativo' => true,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
+                'setor' => 2,
+                'tipo_tarefas' => 3,
+                'user' => 1,
+                'nome' => 'Checklist 2',
+                'descricao' => 'Checklist 2 - segundo checklist',
                 'ativo' => true,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
