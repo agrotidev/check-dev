@@ -38,7 +38,7 @@
                     <td>{{ $checklist->ativo == '1' ? 'SIM' : 'NÃO' }}</td>
                     <td>
                         <a href="#" class="btn btn-info fa fa-eye"></a>
-                        <a href="#" class="btn btn-warning fa fa-pencil-square-o"></a>
+                        <a href="{{ route('manager.checklist.edit', $checklist->id) }}" class="btn btn-warning fa fa-pencil-square-o"></a>
                         {{-- <a href="{{ route('admin.setor.edit', $setor->id) }}"  onclick="alerta({{ $setor->id}})" class="btn btn-warning fa fa-pencil-square-o" type="submit"></a> --}}
                     </td>
                   </tr>                  
