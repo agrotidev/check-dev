@@ -11,10 +11,9 @@ class ChecklistController extends Controller
     public function index()
     {
         $checklists = Checklist::latest()->paginate(20);
-        dd($checklists);
 
-        return view('admin.pages.departamento.index', [
-            'departamentos' => $checklists
+        return view('manager.pages.checklist.index', [
+            'checklists' => $checklists
         ]);
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Auth\AuthAdminController;
 use App\Http\Controllers\Admin\DepartamentoController;
 use App\Http\Controllers\Admin\SetorController;
 use App\Http\Controllers\Manager\Auth\AuthManagerController;
+use App\Http\Controllers\Manager\ChecklistController;
 use App\Http\Controllers\Manager\ManagerController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -32,8 +33,18 @@ Route::prefix('')->group(function() {
     Route::get('/reset/{token}', [AuthManagerController::class, 'showResetPassword'])->name('manager.reset.token');
     Route::post('/reset', [AuthManagerController::class, 'sendResetPassword'])->name('manager.reset');
 
-    // MANAGER DASHBOARD
-    Route::get('/dashboard', [ManagerController::class, 'index'])->name('manager.dash');
+    
+
+    // Checklist
+    Route::prefix('dashboard')->name('manager.')->group(function () {
+
+        // MANAGER DASHBOARD
+        Route::get('/', [ManagerController::class, 'index'])->name('dash');
+
+        // CHECKLIST
+        Route::get('/checklist', [ChecklistController::class, 'index'])->name('checklist.index');
+        
+    });
 
 });
 
