@@ -7,6 +7,7 @@ use App\Models\Checklist;
 use App\Models\Setor;
 use App\Models\TipoTarefa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class ChecklistController extends Controller
@@ -33,27 +34,25 @@ class ChecklistController extends Controller
 
     public function store(Request $request)
     {
+        $request['user'] = Auth::user()->id;
         $request['ativo']  = (!isset($request['ativo']))? false : true;
-
-        dd($request->all());
 
         
         $validator = Validator::make($request->all(), [
             'setor' => 'required',
-            'tipo_tarefa' => 'required',
+            'tipo_tarefas' => 'required',
             'user' => 'required',
             'nome' => 'required|string|min:3',
-            'descricao' => 'required|string|min:3',
             'ativo' => 'required'
         ]);
         
         if ($validator->passes()) {
             
-            $this->repository->create($request->all());
+            Checklist::create($request->all());
 
-            return redirect()->route('admin.setor.index');
+            return redirect()->route('manager.checklist.index');
         } else {
-            return redirect()->back()->withInput($request->only('setor'))->with('error', 'Existe campos vazio!');
+            return redirect()->back()->withInput($request->only('checklist'))->with('error', 'Existe campos vazio!');
         }
     }
 }

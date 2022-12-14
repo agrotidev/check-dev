@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.manager')
 
 @section('title', 'Setor')
 
@@ -36,7 +36,7 @@
 
             <div class="form-group col-md-6 mx-0 px-0">
               <label >Tipo Checklist</label>
-              <select class="form-control" name="tipo_tarefa">
+              <select class="form-control" name="tipo_tarefas">
                 <option >Selecione o tipo</option>
                 @foreach ($tipo_tarefas as $tipo_tarefa)
                   <option value="{{ $tipo_tarefa->id}}" type="text">{{ $tipo_tarefa->nome }}</option>
