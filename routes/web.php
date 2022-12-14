@@ -42,6 +42,7 @@ Route::prefix('')->group(function() {
         Route::get('/', [ManagerController::class, 'index'])->name('dash');
 
         // CHECKLIST
+        Route::get('/checklist/create', [ChecklistController::class, 'create'])->name('checklist.create');
         Route::get('/checklist', [ChecklistController::class, 'index'])->name('checklist.index');
         
     });
