@@ -16108,6 +16108,20 @@ be a descendant of the grid when it is being dragged.
   color: #fff;
 }
 
+.widget-small.success {
+  background-color: #28a745;
+}
+
+.widget-small.success.coloured-icon {
+  background-color: #fff;
+  color: #2a2a2a;
+}
+
+.widget-small.success.coloured-icon .icon {
+  background-color: #28a745;
+  color: #fff;
+}
+
 .messanger {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Checklist;
 use App\Models\Departamento;
 use App\Models\Setor;
 use App\Models\User;
@@ -19,11 +20,13 @@ class AdminController extends Controller
     public function index()
     {
         $usuarios = User::all();
+        $checklists = Checklist::all();
         $departamentos = Departamento::all();
         $setores = Setor::all();
 
         return view('admin.pages.dashboard',[
             'usuarios' => $usuarios,
+            'checklists' => $checklists,
             'departamentos' => $departamentos,
             'setores' => $setores,
         ]);
