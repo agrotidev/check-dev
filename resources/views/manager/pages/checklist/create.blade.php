@@ -14,7 +14,7 @@
       @endif
 
       <div class="col-md-12 mx-0 px-0">
-        <form method="post" action="{{ route('admin.setor.store') }}">
+        <form method="post" action="{{ route('manager.checklist.store') }}">
           @csrf
           <div class="form-group">
 
@@ -26,8 +26,8 @@
 
             <div class="form-group col-md-6 mx-0 px-0">
               <label >Setor</label>
-              <select class="form-control" name="departamento">
-                <option >Selecione o departamento</option>
+              <select class="form-control" name="setor">
+                <option >Selecione o setor</option>
                 @foreach ($setores as $setor)
                   <option value="{{ $setor->id}}" type="text">{{ $setor->nome }}</option>
                 @endforeach
@@ -36,7 +36,7 @@
 
             <div class="form-group col-md-6 mx-0 px-0">
               <label >Tipo Checklist</label>
-              <select class="form-control" name="departamento">
+              <select class="form-control" name="tipo_tarefa">
                 <option >Selecione o tipo</option>
                 @foreach ($tipo_tarefas as $tipo_tarefa)
                   <option value="{{ $tipo_tarefa->id}}" type="text">{{ $tipo_tarefa->nome }}</option>
