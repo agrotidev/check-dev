@@ -60,7 +60,6 @@ class ChecklistController extends Controller
     public function edit($id)
     {
         $checklist = Checklist::find($id);
-        dd($checklist);
         $setores = Setor::where('ativo', true)->get();
         $tipo_tarefas = TipoTarefa::where('ativo', true)->get();
 
@@ -69,5 +68,27 @@ class ChecklistController extends Controller
             'setores' => $setores,
             'tipo_tarefas' => $tipo_tarefas
         ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $checklist = Checklist::find($id);
+        $request['ativo']  = (!isset($request['ativo']))? false : true;
+
+        $validator = Validator::make($request->all(), [
+            'setor' => 'required',
+            'tipo_tarefas' => 'required',
+            'nome' => 'required|string|min:3',
+            'ativo' => 'required'
+        ]);
+        
+        if ($validator->passes()) {
+
+            $checklist->update($request->all());
+            
+            return redirect()->route('manager.checklist.index');
+        } else {
+            return redirect()->back()->withInput($request->only('checklist'))->with('error', 'Existe campos vazio!');
+        }
     }
 }

@@ -72,7 +72,7 @@ class SetorController extends Controller
 
     public function update(Request $request, $id)
     {
-        $setor = Setor::where('id', $id)->first();
+        $setor = Setor::find($id);
 
         $request['ativo']  = (!isset($request['ativo']))? false : true;
 

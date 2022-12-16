@@ -42,6 +42,7 @@ Route::prefix('')->group(function() {
         Route::get('/', [ManagerController::class, 'index'])->name('dash');
 
         // CHECKLIST
+        Route::put('/checklist/{id}/editar', [ChecklistController::class, 'update'])->name('checklist.update');
         Route::get('/checklist/{id}/editar', [ChecklistController::class, 'edit'])->name('checklist.edit');
         Route::get('/checklist/create', [ChecklistController::class, 'create'])->name('checklist.create');
         Route::post('/checklist', [ChecklistController::class, 'store'])->name('checklist.store');
