@@ -73,6 +73,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('dash');
 
     // DEPARTAMENTO
+    Route::put('/departamento/{cod_departamento}/editar', [DepartamentoController::class, 'update'])->name('departamento.update');
+    Route::get('/departamento/{cod_deparmento}/editar', [DepartamentoController::class, 'edit'])->name('departamento.edit');
     Route::delete('/departamento/{cod_departamento}', [DepartamentoController::class, 'destroy'])->name('departamento.destroy');
     Route::get('/departamento/create', [DepartamentoController::class, 'create'])->name('departamento.create');
     Route::post('/departamento', [DepartamentoController::class, 'store'])->name('departamento.store');

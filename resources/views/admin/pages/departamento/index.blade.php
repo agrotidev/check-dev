@@ -32,14 +32,9 @@
                 <td  id="demoNotify">{{$departamento->cod_departamento}}</td>
                 <td>{{$departamento->nome}}</td>
                 <td>{{ $departamento->ativo == '1' ? 'SIM' : 'NÃO' }}</td>
-                <td> <button onclick="alerta({{ $departamento->id}})" class="btn btn-warning fa fa-pencil-square-o" type="submit"></button> </td>
-                {{-- <td>
-                    <form action="{{ route('admin.departamento.destroy', $departamento->id) }}" method="POST">
-                      @csrf
-                      @method('DELETE')
-                      <i class="btn btn-danger fa fa-trash show-delete-box"></i>
-                    </form>
-                  </td> --}}
+                <td>
+                  <a href="{{ route('admin.departamento.edit', $departamento->id) }}" class="btn btn-warning fa fa-pencil-square-o"></a>
+              </td>
               </tr>
               @endforeach
             </tbody>

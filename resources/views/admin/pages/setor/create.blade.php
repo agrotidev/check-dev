@@ -18,10 +18,8 @@
           @csrf
           <div class="form-group">
 
-              <label >Cod. Setor</label>
-              <input onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control my-2  col-md-3" name="cod_setor" type="text" placeholder="Digite o código do setor">
-              
-              {{-- <input onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control my-2  col-md-3" name="departamento" type="text" placeholder="Digite o código do departamento"> --}}
+            <label >Cod. Setor</label>
+            <input onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control my-2  col-md-3" name="cod_setor" type="text" placeholder="Digite o código do setor">
 
             <label >Nome</label>
             <input class="form-control col-md-6" name="nome" type="text" placeholder="Digite o nome do setor">

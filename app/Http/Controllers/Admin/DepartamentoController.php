@@ -57,6 +57,36 @@ class DepartamentoController extends Controller
 
     }
 
+    public function edit($id)
+    {
+        $departamento = Departamento::find($id);
+
+        return view('admin.pages.departamento.edit', [
+            'departamento' => $departamento
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $departamento = Departamento::where('id', $id)->first();
+        
+        $request['ativo']  = (!isset($request['ativo']))? false : true;
+
+        $validator = Validator::make($request->all(), [
+            'nome' => 'required|string|min:3',
+            'ativo' => 'required'
+        ]);
+
+        if ($validator->passes()) {
+
+            $departamento->update($request->all());
+
+            return redirect()->route('admin.departamento.index');
+        } else {
+            return redirect()->back()->withInputs($request->only('departamento'))->with('error', 'Existe campos vazio!');
+        }
+    }
+
     public function destroy($id)
     {
         $departamento = $this->repository->where('id', $id)->first();
