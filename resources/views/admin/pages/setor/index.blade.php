@@ -19,24 +19,21 @@
             <thead>
               <tr class="bg-primary text-white">
                 <th width="80">COD.</th>
-                <th width="200">Departamento</th>
                 <th>Setor</th>
+                <th>Departamento</th>
                 <th>Ativo</th>
-                {{-- <th class="text-center" width="150">Ações</th> --}}
                 <th class="text-center" width="60">Editar</th>
-                {{-- <th class="text-center" width="60"></th> --}}
               </tr>
             </thead>
             <tbody>
               @foreach ($setores as $setor)
               <tr>
                 <td  id="demoNotify">{{$setor->cod_setor}}</td>
-                <td>{{ $setor->departamento }}</td>
                 <td>{{$setor->nome}}</td>
+                <td>{{ $setor->departamento }}</td>
                 <td>{{ $setor->ativo == '1' ? 'SIM' : 'NÃO' }}</td>
                 <td>
                     <a href="{{ route('admin.setor.edit', $setor->id) }}" class="btn btn-warning fa fa-pencil-square-o"></a>
-                    {{-- <a href="{{ route('admin.setor.edit', $setor->id) }}"  onclick="alerta({{ $setor->id}})" class="btn btn-warning fa fa-pencil-square-o" type="submit"></a> --}}
                 </td>
               </tr>                  
               @endforeach

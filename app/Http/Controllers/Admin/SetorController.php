@@ -72,8 +72,23 @@ class SetorController extends Controller
 
     public function update(Request $request, $id)
     {
+        $setor = Setor::where('id', $id)->first();
+
         $request['ativo']  = (!isset($request['ativo']))? false : true;
 
-        dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'departamento' => 'required|numeric',
+            'nome' => 'required|string|min:3',
+            'ativo' => 'required'
+        ]);
+        
+        if ($validator->passes()) {
+            
+            $setor->update($request->all());
+
+            return redirect()->route('admin.setor.index');
+        } else {
+            return redirect()->back()->withInput($request->only('setor'))->with('error', 'Existe campos vazio!');
+        }
     }
 }
