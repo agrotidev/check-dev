@@ -3,7 +3,7 @@
 @section('title', 'Checklist!')
 
 @section('content')
-    @include('layouts.components.page-name', ['name' => 'Checklist'])
+    @include('layouts.components.page-name', ['name' => 'Checklists'])
 
     <div class="row">
         <div class="col-md-12">
@@ -37,7 +37,7 @@
                     <td>{{$checklist->user}}</td>
                     <td>{{ $checklist->ativo == '1' ? 'SIM' : 'NÃO' }}</td>
                     <td>
-                        <a href="#" class="btn btn-info fa fa-eye"></a>
+                        <a href="{{ route('manager.checklist.tarefas.index', $checklist->id) }}" class="btn btn-info fa fa-eye"></a>
                         <a href="{{ route('manager.checklist.edit', $checklist->id) }}" class="btn btn-warning fa fa-pencil-square-o"></a>
                     </td>
                   </tr>                  

@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\SetorController;
 use App\Http\Controllers\Manager\Auth\AuthManagerController;
 use App\Http\Controllers\Manager\ChecklistController;
 use App\Http\Controllers\Manager\ManagerController;
+use App\Http\Controllers\Manager\TarefasChecklistController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,6 +41,9 @@ Route::prefix('')->group(function() {
 
         // MANAGER DASHBOARD
         Route::get('/', [ManagerController::class, 'index'])->name('dash');
+
+        // CHECKLIST TAREFAS
+        Route::get('/checklist/{id}/tarefas', [TarefasChecklistController::class, 'index'])->name('checklist.tarefas.index');
 
         // CHECKLIST
         Route::put('/checklist/{id}/editar', [ChecklistController::class, 'update'])->name('checklist.update');
