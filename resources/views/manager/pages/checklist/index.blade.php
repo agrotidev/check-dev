@@ -9,7 +9,7 @@
         <div class="col-md-12">
           <div class="tile">
             <div class="form-group">
-              <a href="{{ route('manager.checklist.create') }}"><button class="btn btn-primary btn-sm mx-2" type="button">Adicionar</button></a>
+              <a href="{{ route('manager.checklist.create') }}"><button class="btn btn-primary btn-sm mx-2" type="button">Criar Checklist</button></a>
             </div>
             <div class="table-responsive-sm">
               <table class="table table-striped table-sm">
@@ -21,10 +21,7 @@
                     <th>Usuário</th>
                     <th>Tipo Checklist</th>
                     <th>Ativo</th>
-                    {{-- <th class="text-center" width="150">Ações</th> --}}
                     <th class="text-center" width="100">Opções</th>
-                    {{-- <th class="text-center" width="60">Editar</th> --}}
-                    {{-- <th class="text-center" width="60"></th> --}}
                   </tr>
                 </thead>
                 <tbody>

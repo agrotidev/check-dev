@@ -19,12 +19,13 @@
         <div class="col-md-12">
           <div class="tile">
             <div class="form-group">
-              <a href="#"><button class="btn btn-primary btn-sm mx-2" type="button">Adicionar Tarefa</button></a>
+              <a href="{{ url()->previous() }}" class="btn btn-info fa fa-arrow-left"></a>
+              <a href="{{ route('manager.checklist.tarefas.create', $checklist->id) }}"><button class="btn btn-primary btn-sm mx-2" type="button">Adicionar Tarefa</button></a>
             </div>
             <div class="table-responsive-sm">
               <table class="table table-striped table-sm">
                 <thead>
-                  <tr class="bg-primary text-white">
+                  <tr class="bg-dark text-white">
                     <th width="80">COD</th>
                     <th width="200">Nome</th>
                     <th>Descricão</th>

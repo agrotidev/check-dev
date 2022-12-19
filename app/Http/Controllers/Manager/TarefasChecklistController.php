@@ -17,4 +17,14 @@ class TarefasChecklistController extends Controller
             'checklist' => $checklist
         ]);
     }
+
+    public function create($checklist)
+    {
+        $checklist = Checklist::with(['tarefas'])->where('id', $checklist)->get()[0];
+        // $tarefas = $checklist->tarefas;
+        
+        return view('manager.pages.tarefas-checklist.create', [
+            'checklist' => $checklist
+        ]);
+    }
 }
