@@ -14890,6 +14890,22 @@ be a descendant of the grid when it is being dragged.
   }
 }
 
+.bg-purple {
+  background-color: purple !important;
+}
+
+.bg-black-5 {
+  background-color: black !important;
+}
+
+.bg-green {
+  background-color: green !important;
+}
+
+.bg-grey {
+  background-color: #6c757d !important;
+}
+
 .light-text {
   font-weight: 300 !important;
 }

@@ -17,7 +17,7 @@
         <div class="table-responsive-sm">
           <table class="table table-striped table-sm">
             <thead>
-              <tr class="bg-primary text-white">
+              <tr class="bg-dark text-white">
                 <th width="80">COD.</th>
                 <th>Setor</th>
                 <th>Departamento</th>
