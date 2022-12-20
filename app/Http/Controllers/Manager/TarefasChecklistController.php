@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Manager;
 
 use App\Http\Controllers\Controller;
+use App\Models\CategoriaTarefas;
 use App\Models\Checklist;
 use Illuminate\Http\Request;
 
@@ -21,10 +22,11 @@ class TarefasChecklistController extends Controller
     public function create($checklist)
     {
         $checklist = Checklist::with(['tarefas'])->where('id', $checklist)->get()[0];
-        // $tarefas = $checklist->tarefas;
+        $categoria_tarefas = CategoriaTarefas::where('ativo', true)->get();
         
         return view('manager.pages.tarefas-checklist.create', [
-            'checklist' => $checklist
+            'checklist' => $checklist,
+            'categoria_tarefas' => $categoria_tarefas
         ]);
     }
 }
