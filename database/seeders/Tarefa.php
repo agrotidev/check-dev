@@ -19,7 +19,7 @@ class Tarefa extends Seeder
         DB::table('tarefas')->insert([
             [
                 'checklist' => 1,
-                'categoria_tarefa' => 1,
+                'categoria_tarefa' => 2,
                 'nome' => 'Tarefa 1',
                 'descricao' => 'Descricão tarefa 1',
                 'valor' => 0.80,
@@ -29,7 +29,7 @@ class Tarefa extends Seeder
             ],
             [
                 'checklist' => 1,
-                'categoria_tarefa' => 1,
+                'categoria_tarefa' => 2,
                 'nome' => 'Tarefa 2',
                 'descricao' => 'Descricão tarefa 2',
                 'valor' => 0.60,
@@ -39,7 +39,7 @@ class Tarefa extends Seeder
             ],
             [
                 'checklist' => 1,
-                'categoria_tarefa' => 2,
+                'categoria_tarefa' => 3,
                 'nome' => 'Tarefa 3',
                 'descricao' => 'Descricão tarefa 3',
                 'valor' => 0.20,
@@ -49,7 +49,7 @@ class Tarefa extends Seeder
             ],
             [
                 'checklist' => 1,
-                'categoria_tarefa' => 2,
+                'categoria_tarefa' => 3,
                 'nome' => 'Tarefa 4',
                 'descricao' => 'Descricão tarefa 4',
                 'valor' => 0.20,
@@ -59,7 +59,7 @@ class Tarefa extends Seeder
             ],
             [
                 'checklist' => 1,
-                'categoria_tarefa' => 3,
+                'categoria_tarefa' => 4,
                 'nome' => 'Tarefa 4',
                 'descricao' => 'Descricão tarefa 4',
                 'valor' => 0.50,
@@ -69,7 +69,7 @@ class Tarefa extends Seeder
             ],
             [
                 'checklist' => 1,
-                'categoria_tarefa' => 3,
+                'categoria_tarefa' => 4,
                 'nome' => 'Tarefa 4',
                 'descricao' => 'Descricão tarefa 4',
                 'valor' => 0.50,
@@ -80,7 +80,7 @@ class Tarefa extends Seeder
             // Checklist 2
             [
                 'checklist' => 2,
-                'categoria_tarefa' => 1,
+                'categoria_tarefa' => 4,
                 'nome' => 'Tarefa 1',
                 'descricao' => 'Descricão tarefa 1',
                 'valor' => 0.80,
@@ -90,7 +90,7 @@ class Tarefa extends Seeder
             ],
             [
                 'checklist' => 2,
-                'categoria_tarefa' => 1,
+                'categoria_tarefa' => 4,
                 'nome' => 'Tarefa 2',
                 'descricao' => 'Descricão tarefa 2',
                 'valor' => 0.60,
@@ -100,7 +100,7 @@ class Tarefa extends Seeder
             ],
             [
                 'checklist' => 2,
-                'categoria_tarefa' => 2,
+                'categoria_tarefa' => 3,
                 'nome' => 'Tarefa 3',
                 'descricao' => 'Descricão tarefa 3',
                 'valor' => 0.20,
@@ -110,7 +110,7 @@ class Tarefa extends Seeder
             ],
             [
                 'checklist' => 2,
-                'categoria_tarefa' => 2,
+                'categoria_tarefa' => 3,
                 'nome' => 'Tarefa 4',
                 'descricao' => 'Descricão tarefa 4',
                 'valor' => 0.20,
@@ -120,7 +120,7 @@ class Tarefa extends Seeder
             ],
             [
                 'checklist' => 2,
-                'categoria_tarefa' => 3,
+                'categoria_tarefa' => 4,
                 'nome' => 'Tarefa 4',
                 'descricao' => 'Descricão tarefa 4',
                 'valor' => 0.50,
@@ -130,7 +130,7 @@ class Tarefa extends Seeder
             ],
             [
                 'checklist' => 2,
-                'categoria_tarefa' => 3,
+                'categoria_tarefa' => 4,
                 'nome' => 'Tarefa 4',
                 'descricao' => 'Descricão tarefa 4',
                 'valor' => 0.50,

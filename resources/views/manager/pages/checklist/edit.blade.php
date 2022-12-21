@@ -29,7 +29,7 @@
             <div class="form-group col-md-6 mx-0 px-0">
               <label >Setor</label>
               <select class="form-control" name="setor">
-                <option >Selecione o setor</option>
+                <option>Selecione o setor</option>
                 @foreach ($setores as $setor)
                   <option value="{{ $setor->id}}" {{ $setor->id == $checklist->setor ? 'selected' : ''  }} type="text">{{ $setor->nome }}</option>
                 @endforeach
@@ -56,7 +56,7 @@
         
       </div>
       <div class="tile-footer">
-        <a class="btn btn-secondary" href="{{ url()->previous() }}"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Salvar</button>
+        <a class="btn btn-secondary" href="{{ route('manager.checklist.index') }}"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Salvar</button>
       </div>
     </form>
     </div>

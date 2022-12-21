@@ -43,14 +43,15 @@ Route::prefix('')->group(function() {
         Route::get('/', [ManagerController::class, 'index'])->name('dash');
 
         // CHECKLIST TAREFAS
+        Route::post('/checklist/{id}/tarefas', [TarefasChecklistController::class, 'store'])->name('checklist.tarefas.store');
         Route::get('/checklist/{checklist}/tarefa/create', [TarefasChecklistController::class, 'create'])->name('checklist.tarefas.create');
         Route::get('/checklist/{id}/tarefas', [TarefasChecklistController::class, 'index'])->name('checklist.tarefas.index');
 
         // CHECKLIST
         Route::put('/checklist/{id}/editar', [ChecklistController::class, 'update'])->name('checklist.update');
         Route::get('/checklist/{id}/editar', [ChecklistController::class, 'edit'])->name('checklist.edit');
-        Route::get('/checklist/create', [ChecklistController::class, 'create'])->name('checklist.create');
         Route::post('/checklist', [ChecklistController::class, 'store'])->name('checklist.store');
+        Route::get('/checklist/create', [ChecklistController::class, 'create'])->name('checklist.create');
         Route::get('/checklist', [ChecklistController::class, 'index'])->name('checklist.index');
         
     });

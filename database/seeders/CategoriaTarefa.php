@@ -18,6 +18,14 @@ class CategoriaTarefa extends Seeder
     {
         DB::table('categoria_tarefas')->insert([
             [
+                'nome' => 'PADRÃO',
+                'descricao' => 'Categoria Padrão',
+                'peso' => 0,
+                'ativo' => true,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
+            [
                 'nome' => 'ORGANIZAÇÃO / LIMPEZA',
                 'descricao' => 'Categoria Organização e Limpeza',
                 'peso' => 2.5,
