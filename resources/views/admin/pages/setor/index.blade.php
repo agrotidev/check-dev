@@ -12,7 +12,6 @@
         <div class="form-group">
           <a href="{{ route('admin.setor.create') }}"><button class="btn btn-primary btn-sm mx-2" type="button">Adicionar</button></a>
           <button class="btn btn-warning btn-sm mx-2" type="button">Importar</button>
-          <button class="btn btn-info btn-sm mx-2" type="button">Exportar</button>
         </div>
         <div class="table-responsive-sm">
           <table class="table table-striped table-sm">
