@@ -34,10 +34,17 @@ class AuthController extends Controller
 
         // Genreate token
         $token = base64_encode($user->code.'.'.$user->email);
-        
+
+        $usuarios = User::all();
+        $usuarios->makeVisible(['code', 'nome', 'email', 'password_mobile'])->makeHidden('active');
+
         return response()->json([
-            'token' => $token
-        ]);
+            'data' => [
+                'token' => $token,
+                'usuarios' => $usuarios
+            ]
+        ], 200);
+    
     }
 
 }

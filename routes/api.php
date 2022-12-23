@@ -9,6 +9,6 @@ Route::prefix('off')->group(function() {
 
         // Autenticação
         Route::post('/login', [AuthController::class, 'login'])->name('api.off.login');
-        
+
     });
 });
