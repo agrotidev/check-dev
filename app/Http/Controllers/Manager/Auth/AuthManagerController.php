@@ -25,6 +25,7 @@ class AuthManagerController extends Controller
 
     public function login(Request $request)
     {
+        dd($request->all());
         $request['remember'] = empty($request->remember) ? false : true;
 
         $this->validaLogin($request);

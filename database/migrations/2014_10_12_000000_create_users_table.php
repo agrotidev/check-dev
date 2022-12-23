@@ -27,6 +27,7 @@ return new class extends Migration
 
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('password_mobile')->default(md5('teste123'));
             $table->rememberToken();
 
             $table->foreign('setor')->references('id')->on('setores');
