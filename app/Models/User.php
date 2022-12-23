@@ -20,6 +20,7 @@ class User extends Authenticatable
         'code',
         'active',
         'name',
+        'mobile',
         'email',
         'password',
         'password_mobile',
