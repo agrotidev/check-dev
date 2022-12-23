@@ -16,7 +16,7 @@ class AuthController extends Controller
 
         Validator::make($credenciais, [
             'email' => 'required|string',
-            'password_mobile' => 'required|string'
+            'password' => 'required|string'
         ])->validate();
 
         $user = User::where('email', $request->email)->first();
@@ -26,7 +26,7 @@ class AuthController extends Controller
             return response()->json($message->getMessage(), 401);
         }
 
-        if (!($user->password === md5($credenciais['password_mobile'])))
+        if (!($user->password_mobile === md5($credenciais['password'])))
         {
             $message = new ApiMessage('Usuario ou senha invalido');
             return response()->json($message->getMessage(), 401);
@@ -39,4 +39,5 @@ class AuthController extends Controller
             'token' => $token
         ]);
     }
+
 }
