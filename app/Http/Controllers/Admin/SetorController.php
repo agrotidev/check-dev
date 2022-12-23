@@ -36,6 +36,7 @@ class SetorController extends Controller
     public function store(Request $request)
     {
         $request['ativo']  = (!isset($request['ativo']))? false : true;
+        
 
         
         $validator = Validator::make($request->all(), [
@@ -43,10 +44,25 @@ class SetorController extends Controller
             'departamento' => 'required|numeric',
             'nome' => 'required|string|min:3'
         ]);
+
+        // if ($validator->errors()) {
+        //     dd($validator->messages()['cod_setor']);
+        //     // switch ($validator->messages()) {
+        //     //     case 'value':
+        //     //         # code...
+        //     //         break;
+                
+        //     //     default:
+        //     //         # code...
+        //     //         break;
+        //     // }
+        // }
+
+        // dd($validator->messages());
         
         if ($validator->passes()) {
             
-            $this->repository->create($request->all());
+            Setor::create($request->all());
 
             return redirect()->route('admin.setor.index');
         } else {

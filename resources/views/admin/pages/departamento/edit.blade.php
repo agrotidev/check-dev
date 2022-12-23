@@ -21,7 +21,7 @@
           <div class="form-group">
 
             <label >Cod. Departamento</label>
-            <input disabled onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control my-2  col-md-3" name="cod_departamento" value="{{ $departamento->cod_departamento}}">
+            <input disabled onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control my-2  col-md-3" name="cod_departamento" value="{{ $departamento->cod_departamento}}" maxlength="6">
 
             <label >Nome</label>
             <input class="form-control col-md-6" value="{{ $departamento->nome }}"  name="nome" type="text" placeholder="Digite o nome do departamento">

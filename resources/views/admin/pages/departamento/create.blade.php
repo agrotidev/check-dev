@@ -19,7 +19,7 @@
           <div class="form-group">
               <label class="control-label">Cadastro Departamento</label>
 
-              <input onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control my-2  col-md-3" value="{{old('cod_departamento')}}" name="cod_departamento" type="text" placeholder="Digite o código do departamento">
+              <input onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control my-2  col-md-3" value="{{old('cod_departamento')}}" name="cod_departamento" type="text" placeholder="Digite o código do departamento" maxlength="6">
 
 
             <input class="form-control col-md-6"  name="nome" type="text" placeholder="Digite o nome do departamento">
