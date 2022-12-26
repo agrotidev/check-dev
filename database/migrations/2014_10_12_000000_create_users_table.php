@@ -24,6 +24,7 @@ return new class extends Migration
             $table->boolean('active')->default(false);
             $table->boolean('ismanager')->default(false);
             $table->boolean('islider')->default(false);
+            $table->boolean('web')->default(false);
             $table->boolean('mobile')->default(false);
 
             $table->timestamp('email_verified_at')->nullable();

@@ -12,7 +12,9 @@
 
 @section('app-menu')
 <li><a class="app-menu__item  {{ ( Request::routeIs('manager.dash') == Route::current()->getName())  ? 'active' : '' }}" href="{{route('manager.dash')}}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
+@if ((Auth::user()->islider == true || Auth::user()->ismanager == true))
 <li><a class="app-menu__item {{ ( Request::routeIs('manager.checklist.index') == Route::current()->getName())  ? 'active' : '' }}" href="{{route('manager.checklist.index')}}"><i class="app-menu__icon fa fa-check-square-o"></i><span class="app-menu__label">Checklists</span></a></li>
+@endif
 @endsection
 
 @section('content')

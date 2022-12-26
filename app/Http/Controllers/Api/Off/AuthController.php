@@ -19,10 +19,15 @@ class AuthController extends Controller
             'password' => 'required|string'
         ])->validate();
 
-        $user = User::where('email', $request->email)->first();
+        $user = User::where('email', $request->email)->where('active', true)->first();
 
         if (!$user) {
             $message = new ApiMessage('Usuario ou senha invalido');
+            return response()->json($message->getMessage(), 401);
+        }
+
+        if ($user->mobile == false) {
+            $message = new ApiMessage('Usuário Inativo, Procurar o setor de TI');
             return response()->json($message->getMessage(), 401);
         }
 
@@ -35,12 +40,21 @@ class AuthController extends Controller
         // Genreate token
         $token = base64_encode($user->code.'.'.$user->email);
 
-        $usuarios = User::all()->makeVisible(['code', 'nome', 'email', 'password_mobile'])->makeHidden('active');;
+        $user = [
+            'setor' => $user->setor,
+            'code' => $user->code,
+            'name' => $user->name,
+            'email' => $user->email,
+            'mobile' => $user->mobile
+        ];
+
+        $usuarios = User::all()->makeVisible(['code', 'nome', 'email', 'password_mobile'])->makeHidden(['active', 'web']);;
 
 
         return response()->json([
             'data' => [
                 'token' => $token,
+                'user_login' => $user,
                 'usuarios' => $usuarios
             ]
         ], 200);

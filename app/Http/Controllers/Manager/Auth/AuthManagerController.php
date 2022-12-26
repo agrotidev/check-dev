@@ -25,7 +25,6 @@ class AuthManagerController extends Controller
 
     public function login(Request $request)
     {
-        dd($request->all());
         $request['remember'] = empty($request->remember) ? false : true;
 
         $this->validaLogin($request);
@@ -45,7 +44,7 @@ class AuthManagerController extends Controller
     protected function validaLogin(Request $request)
     {
         $request->validate([
-            'email' => 'required|string',
+            'email' => 'required|string|exists:users,email,active,1',
             'password' => 'required',
         ]);
     }
@@ -59,7 +58,7 @@ class AuthManagerController extends Controller
     public function sendForgot(Request $request) 
     {
         $request->validate([
-            'email' => 'required|email|exists:admins,email'
+            'email' => 'required|exists:users,email,active,1'
         ]);
 
         $token = Str::random(64);
@@ -93,7 +92,7 @@ class AuthManagerController extends Controller
     {
        
         $request->validate([
-            'email' => 'required|email|exists:admins,email',
+            'email' => 'required|email|exists:users,email,active,1',
             'password' => 'required|min:6|confirmed',
             'password_confirmation' => 'required',
         ]);

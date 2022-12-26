@@ -23,6 +23,8 @@ class UserSeed extends Seeder
                 'ismanager' => true,
                 'islider' => true,
                 'active' => true,
+                'web' => true,
+                'mobile' => true,
                 'code' => 8146,
                 'name' => 'Thiago',
                 'email' => 'thiago@email.com',
@@ -36,11 +38,9 @@ class UserSeed extends Seeder
             [
                 'setor' => '1',
                 'modulo' => '1',
-                'ismanager' => true,
-                'islider' => true,
                 'code' => 8080,
                 'name' => 'JeremiasM',
-                'email' => 'jeremiasm@email.com',
+                'email' => 'jeremias@email.com',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]
