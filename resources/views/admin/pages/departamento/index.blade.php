@@ -9,9 +9,15 @@
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
+        
+        @if (Session::get('success'))
+          <div class="text-center"><small id="openMessage" class="text-success ">{{ session()->get('success') }}</small></div>
+        @endif
+
+
         <div class="form-group">
           <a href="{{ route('admin.departamento.create') }}"><button class="btn btn-primary btn-sm mx-2" type="button">Adicionar</button></a>
-          <button class="btn btn-warning btn-sm mx-2" type="button">Importar</button>
+          <a href="{{ route('admin.import.departamento.index') }}" class="btn btn-warning btn-sm mx-2" type="button">Importar</a>
         </div>
 
         <div class="table-responsive-sm">

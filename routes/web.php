@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\Auth\AuthAdminController;
 use App\Http\Controllers\Admin\DepartamentoController;
 use App\Http\Controllers\Admin\SetorController;
+use App\Http\Controllers\Admin\Imports\DepartamentoImportController;
 use App\Http\Controllers\Manager\Auth\AuthManagerController;
 use App\Http\Controllers\Manager\ChecklistController;
 use App\Http\Controllers\Manager\ManagerController;
@@ -97,5 +98,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/setor', [SetorController::class, 'store'])->name('setor.store');
     Route::get('/setor/create', [SetorController::class, 'create'])->name('setor.create');
     Route::get('/setor', [SetorController::class, 'index'])->name('setor.index');
+
+    // IMPORT
+    Route::post('/import/departamento', [DepartamentoImportController::class, 'importExcel'])->name('import.departamento.xls'); 
+    Route::get('/import/departamento', [DepartamentoImportController::class, 'index'])->name('import.departamento.index'); 
 
 });
