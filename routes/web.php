@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Auth\AuthAdminController;
 use App\Http\Controllers\Admin\DepartamentoController;
 use App\Http\Controllers\Admin\SetorController;
 use App\Http\Controllers\Admin\Imports\DepartamentoImportController;
+use App\Http\Controllers\Admin\UsuarioController;
 use App\Http\Controllers\Manager\Auth\AuthManagerController;
 use App\Http\Controllers\Manager\ChecklistController;
 use App\Http\Controllers\Manager\ManagerController;
@@ -82,6 +83,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     // ADMIN DASHBOARD
     Route::get('/', [AdminController::class, 'index'])->name('dash');
+
+
+    // USUARIO
+    Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index');
 
     // DEPARTAMENTO
     Route::put('/departamento/{cod_departamento}/editar', [DepartamentoController::class, 'update'])->name('departamento.update');

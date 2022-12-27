@@ -14,6 +14,7 @@
     <li><a class="app-menu__item {{ ( Request::routeIs('admin.dash') == Route::current()->getName())  ? 'active' : '' }}" href="{{route('admin.dash')}}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
     <li><a class="app-menu__item {{ ( Request::routeIs('admin.departamento.*') == Route::current()->getName())  ? 'active' : '' }}" href="{{route('admin.departamento.index')}}"><i class="app-menu__icon fa fa-object-group"></i><span class="app-menu__label">Departamentos</span></a></li>
     <li><a class="app-menu__item {{ ( Request::routeIs('admin.setor.*') == Route::current()->getName())  ? 'active' : '' }}" href="{{route('admin.setor.index')}}"><i class="app-menu__icon fa fa-object-group"></i><span class="app-menu__label">Setores</span></a></li>
+    <li><a class="app-menu__item {{ ( Request::routeIs('admin.usuario.*') == Route::current()->getName())  ? 'active' : '' }}" href="{{route('admin.usuario.index')}}"><i class="app-menu__icon fa fa-object-group"></i><span class="app-menu__label">Usuarios</span></a></li>
     {{-- <li><a class="app-menu__item" href="{{route('admin.exemple')}}"><i class="app-menu__icon fa fa-object-group"></i><span class="app-menu__label">Exemplo</span></a></li> --}}
 @endsection
 
