@@ -18,6 +18,7 @@ return new class extends Migration
             $table->bigInteger('cod_departamento')->unique();
 
             $table->string('nome')->unique();
+            $table->string('descricao')->nullable();
             $table->boolean('ativo')->default(true);
             
             $table->timestamps();
