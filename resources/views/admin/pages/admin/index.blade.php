@@ -11,7 +11,6 @@
       <div class="tile">
         <div class="form-group">
           <a href="#"><button class="btn btn-primary btn-sm mx-2" type="button">Adicionar</button></a>
-          <button class="btn btn-warning btn-sm mx-2" type="button">Importar</button>
         </div>
         <div class="table-responsive-sm">
           <table class="table table-striped table-sm">
