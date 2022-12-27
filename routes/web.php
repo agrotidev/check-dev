@@ -8,6 +8,7 @@ use App\Http\Controllers\Manager\Auth\AuthManagerController;
 use App\Http\Controllers\Manager\ChecklistController;
 use App\Http\Controllers\Manager\ManagerController;
 use App\Http\Controllers\Manager\TarefasChecklistController;
+use App\Http\Controllers\TesteAgrupamentoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,6 +42,8 @@ Route::prefix('')->group(function() {
 
         // MANAGER DASHBOARD
         Route::get('/', [ManagerController::class, 'index'])->name('dash');
+
+        Route::get('/check-group/{id}', [TesteAgrupamentoController::class, 'index'])->name('agrupamento.teste.index');
 
         // CHECKLIST TAREFAS
         Route::post('/checklist/{id}/tarefas', [TarefasChecklistController::class, 'store'])->name('checklist.tarefas.store');
