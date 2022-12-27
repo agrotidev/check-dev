@@ -82,7 +82,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/reset', [AuthAdminController::class, 'sendResetPassword'])->name('reset');
 
     // ADMIN DASHBOARD
-    Route::get('/', [AdminController::class, 'index'])->name('dash');
+    Route::get('/', [DashAdminController::class, 'index'])->name('dash');
 
 
     // USUARIO
