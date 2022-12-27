@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\DashAdminController;
 use App\Http\Controllers\Admin\Auth\AuthAdminController;
 use App\Http\Controllers\Admin\DepartamentoController;
 use App\Http\Controllers\Admin\SetorController;
