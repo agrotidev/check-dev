@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DashAdminController;
 use App\Http\Controllers\Admin\Auth\AuthAdminController;
 use App\Http\Controllers\Admin\DepartamentoController;
@@ -85,8 +86,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashAdminController::class, 'index'])->name('dash');
 
 
-    // USUARIO
-    Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index');
 
     // DEPARTAMENTO
     Route::put('/departamento/{cod_departamento}/editar', [DepartamentoController::class, 'update'])->name('departamento.update');
@@ -107,5 +106,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // IMPORT
     Route::post('/import/departamento', [DepartamentoImportController::class, 'importExcel'])->name('import.departamento.xls'); 
     Route::get('/import/departamento', [DepartamentoImportController::class, 'index'])->name('import.departamento.index'); 
+
+
+    // USUARIO
+    Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index');
+
+    // USUARIO
+    Route::get('/administrators', [AdminController::class, 'index'])->name('administrador.index');
 
 });
