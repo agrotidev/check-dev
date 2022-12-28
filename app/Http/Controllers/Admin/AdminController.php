@@ -21,13 +21,9 @@ class AdminController extends Controller
     public function create()
     {
         $administradores = Admin::where('active', true)->get();
-        $setores = Setor::where('ativo', true)->get();
-        $modules = $setores;
 
         return view('admin.pages.admin.create', [
-            'administradores' => $administradores,
-            'setores' => $setores,
-            'modules' => $modules
+            'administradores' => $administradores
         ]);
     }
 }

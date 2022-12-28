@@ -21,7 +21,7 @@
             <div class="form-row">            
               <div class="form-gorup col-md-2">
                 <label >Matrícula</label><br>
-                <input class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="code" type="text"  placeholder="Digite seu código" maxlength="6">
+                <input class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="code" type="number"  placeholder="Digite seu código" maxlength="6">
               </div>
                     
               <div class="form-group col-md-5">
@@ -37,53 +37,6 @@
             </div>
 
             <div class="form-row">
-
-              <div class="form-group col-md-4">  
-                <label >Modulo</label>
-                <select class="form-control" name="modulo">
-                  <option >Selecione o modulo</option>
-                  @foreach ($modules as $modulo)
-                    <option value="{{ $modulo->id}}" type="text">{{ $modulo->nome }}</option>
-                  @endforeach
-                </select>  
-              </div> 
-
-              <div class="form-group col-md-4">  
-                <label >Setor</label>
-                <select class="form-control" name="modulo">
-                  <option >Selecione o setor</option>
-                  @foreach ($setores as $setor)
-                    <option value="{{ $setor->id}}" type="text">{{ $setor->nome }}</option>
-                  @endforeach
-                </select>  
-              </div> 
-
-              <div class="form-group col-md-1">
-                <label>Gerente</label>
-                <div class="toggle-flip">
-                  <label class="form-check-label">
-                    <input type="checkbox" name="ismanager" value="ativo" checked><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="form-group col-md-1">
-                <label>Lider</label>
-                <div class="toggle-flip">
-                  <label class="form-check-label">
-                    <input type="checkbox" name="islider" value="ativo" checked><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="form-group col-md-1">
-                <label>Mobile</label>
-                <div class="toggle-flip">
-                  <label class="form-check-label">
-                    <input type="checkbox" name="mobile" value="ativo" checked><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
-                  </label>
-                </div>
-              </div>
 
               <div class="form-group col-md-1">
                 <label>Ativo</label>
