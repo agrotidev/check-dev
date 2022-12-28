@@ -10,8 +10,8 @@
     <div class="col-md-12">
       <div class="tile">
         <div class="form-group">
-          <a href="#"><button class="btn btn-primary btn-sm mx-2" type="button">Adicionar</button></a>
-          <button class="btn btn-warning btn-sm mx-2" type="button">Importar</button>
+          <a href="{{ route('admin.usuario.create') }}" class="btn btn-primary btn-sm mx-2">Adicionar</a>
+          <a href="#" class="btn btn-warning btn-sm mx-2">Importar</a>
         </div>
         <div class="table-responsive-sm">
           <table class="table table-striped table-sm">

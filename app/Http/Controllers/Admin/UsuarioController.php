@@ -20,12 +20,12 @@ class UsuarioController extends Controller
 
     public function create()
     {
-        $administradores = User::where('active', true)->get();
+        $usuarios = User::where('active', true)->get();
         $setores = Setor::where('ativo', true)->get();
         $modules = $setores;
 
         return view('admin.pages.usuario.create', [
-            'usuarios' => $administradores,
+            'usuarios' => $usuarios,
             'setores' => $setores,
             'modules' => $modules
         ]);
