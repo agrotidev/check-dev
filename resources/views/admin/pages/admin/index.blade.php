@@ -10,7 +10,7 @@
     <div class="col-md-12">
       <div class="tile">
         <div class="form-group">
-          <a href="#"><button class="btn btn-primary btn-sm mx-2" type="button">Adicionar</button></a>
+          <a href="{{ route('admin.administrador.create') }}"><button class="btn btn-primary btn-sm mx-2" type="button">Adicionar</button></a>
         </div>
         <div class="table-responsive-sm">
           <table class="table table-striped table-sm">

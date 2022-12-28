@@ -112,6 +112,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index');
 
     // USUARIO
+    Route::get('/administrators/create', [AdminController::class, 'create'])->name('administrador.create');
     Route::get('/administrators', [AdminController::class, 'index'])->name('administrador.index');
 
 });

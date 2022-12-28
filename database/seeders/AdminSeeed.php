@@ -18,6 +18,7 @@ class AdminSeeed extends Seeder
     {
         DB::table('admins')->insert([
             [
+                'code' => 8146,
                 'name' => 'Thiago',
                 'email' => 'thiago@email.com',
                 'active' => true,

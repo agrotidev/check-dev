@@ -20,6 +20,7 @@
               <div class="form-group">
 
                 <div class="form-row">
+                  
                   <div class="form-group col-md-6">
                     <label >Nome</label>
                     <input class="form-control" name="nome" type="text" placeholder="Digite o nome da tarefa">
