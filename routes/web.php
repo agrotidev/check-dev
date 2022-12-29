@@ -109,6 +109,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
     // USUARIO
+    Route::post('/usuario', [UsuarioController::class, 'store'])->name('usuario.store'); 
     Route::get('/usuario/create', [UsuarioController::class, 'create'])->name('usuario.create'); 
     Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index'); 
 

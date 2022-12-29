@@ -14,8 +14,9 @@
       @endif
 
       <div class="col-md-12 mx-0 px-0">
-        <form method="post" action="#">
+        <form method="post" action="{{ route('admin.usuario.store') }}">
           @csrf
+
           <div class="form-group">
             
             <div class="form-row">            
@@ -31,7 +32,7 @@
   
               <div class="form-group col-md-5">
                 <label >E-mail</label>
-                <input class="form-control" name="name" type="text" placeholder="Digite seu e-mail">                  
+                <input class="form-control" name="email" type="text" placeholder="Digite seu e-mail">                  
               </div>
           
             </div>
@@ -39,18 +40,8 @@
             <div class="form-row">
 
               <div class="form-group col-md-4">  
-                <label >Modulo</label>
-                <select class="form-control" name="modulo">
-                  <option >Selecione o modulo</option>
-                  @foreach ($modules as $modulo)
-                    <option value="{{ $modulo->id}}" type="text">{{ $modulo->nome }}</option>
-                  @endforeach
-                </select>  
-              </div> 
-
-              <div class="form-group col-md-4">  
                 <label >Setor</label>
-                <select class="form-control" name="modulo">
+                <select class="form-control" name="setor">
                   <option >Selecione o setor</option>
                   @foreach ($setores as $setor)
                     <option value="{{ $setor->id}}" type="text">{{ $setor->nome }}</option>
