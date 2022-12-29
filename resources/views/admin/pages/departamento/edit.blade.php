@@ -5,13 +5,15 @@
 @section('content')
   @include('layouts.components.page-name', ['name' => 'Editar - Departamento'])
 
+  @if (Session::get('error'))
+    <div class="text-center"><small id="openMessage" class="text-danger ">{{ session()->get('error') }}</small></div>
+  @endif
+
 <div class="row">
   <div class="col-12">
     <div class="tile">
 
-      @if (Session::get('error'))
-        <div class="text-center"><small id="openMessage" class="text-danger ">{{ session()->get('error') }}</small></div>
-      @endif
+      
 
       <div class="col-md-12 mx-0 px-0">
         <form method="post" action="{{ route('admin.departamento.update', $departamento->id) }}">

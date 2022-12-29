@@ -5,14 +5,14 @@
 @section('content')
   @include('layouts.components.page-name', ['name' => 'Departamentos'])
 
+  {{-- @if (Session::get('success'))
+    <div class="text-center"><small id="openMessage" class="text-success ">{{ session()->get('success') }}</small></div>
+  @endif --}}
+
 
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        
-        @if (Session::get('success'))
-          <div class="text-center"><small id="openMessage" class="text-success ">{{ session()->get('success') }}</small></div>
-        @endif
 
 
         <div class="form-group">
@@ -53,3 +53,4 @@
   </div>
 
 @endsection
+

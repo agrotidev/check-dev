@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Departamento;
+use Brian2694\Toastr\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr as Toast;
 use Illuminate\Support\Facades\Validator;
 
 class DepartamentoController extends Controller
 {
     private $repository;
+    private $toast;
 
     public function __construct(Departamento $departamento)
     {
@@ -50,7 +53,9 @@ class DepartamentoController extends Controller
 
             $this->repository->create($request->all());
 
-            return redirect()->route('admin.departamento.index');
+            Toast::success('Criado com sucesso!');
+
+            return redirect(route('admin.departamento.index'));;
         } else {
             return redirect()->back()->withInputs($request->only('departamento'))->with('error', 'Existe campos vazio!');
         }
@@ -81,7 +86,9 @@ class DepartamentoController extends Controller
 
             $departamento->update($request->all());
 
-            return redirect()->route('admin.departamento.index');
+            Toast::success('Atualizado com sucesso!');
+
+            return redirect(route('admin.departamento.index'));
         } else {
             return redirect()->back()->withInputs($request->only('departamento'))->with('error', 'Existe campos vazio!');
         }
@@ -91,8 +98,5 @@ class DepartamentoController extends Controller
     {
         $departamento = $this->repository->where('id', $id)->first();
 
-
-
-        // dd($departamento);
     }
 }
