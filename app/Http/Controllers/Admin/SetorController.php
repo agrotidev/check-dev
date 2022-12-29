@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Departamento;
 use App\Models\Setor;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr as Toast;
 use Illuminate\Support\Facades\Validator;
 
 class SetorController extends Controller
@@ -44,26 +45,12 @@ class SetorController extends Controller
             'departamento' => 'required|numeric',
             'nome' => 'required|string|min:3'
         ]);
-
-        // if ($validator->errors()) {
-        //     dd($validator->messages()['cod_setor']);
-        //     // switch ($validator->messages()) {
-        //     //     case 'value':
-        //     //         # code...
-        //     //         break;
-                
-        //     //     default:
-        //     //         # code...
-        //     //         break;
-        //     // }
-        // }
-
-        // dd($validator->messages());
         
         if ($validator->passes()) {
             
             Setor::create($request->all());
 
+            Toast::success('Criado com sucesso!');
             return redirect()->route('admin.setor.index');
         } else {
             return redirect()->back()->withInput($request->only('setor'))->with('error', 'Existe campos vazio!');
@@ -101,7 +88,8 @@ class SetorController extends Controller
         if ($validator->passes()) {
             
             $setor->update($request->all());
-
+            
+            Toast::success('Atualizado com sucesso!');
             return redirect()->route('admin.setor.index');
         } else {
             return redirect()->back()->withInput($request->only('setor'))->with('error', 'Existe campos vazio!');
