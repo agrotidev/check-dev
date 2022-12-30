@@ -13,6 +13,7 @@ class Checklist extends Model
     protected $table = 'checklists';
 
     protected $fillable = [
+        'grupo_checklist',
         'setor',
         'tipo_tarefas',
         'user',  
