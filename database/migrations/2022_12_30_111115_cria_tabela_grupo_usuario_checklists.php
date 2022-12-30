@@ -15,6 +15,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user');
 
             $table->foreign('grupo_checklist')->references('id')->on('grupo_checklists');
+            $table->foreign('user')->references('id')->on('users');
             
             $table->timestamps();
         });
