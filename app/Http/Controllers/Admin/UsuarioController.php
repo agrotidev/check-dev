@@ -9,7 +9,6 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr as Toast;
 use Illuminate\Support\Facades\Validator;
-use PhpParser\Node\Stmt\TryCatch;
 
 class UsuarioController extends Controller
 {
@@ -42,10 +41,10 @@ class UsuarioController extends Controller
         $request['mobile']  = (!isset($request['mobile']))? false : true;
         $request['active']  = (!isset($request['active']))? false : true;
         $request['modulo'] = $request->setor;
+        // dd($request->all());
 
         try {
-            User::create($request->all());
-            
+            User::create($request->all());            
 
             Toast::success('Criado com sucesso!');
             return redirect()->route('admin.usuario.index');
