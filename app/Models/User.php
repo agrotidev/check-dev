@@ -41,4 +41,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+    public function checklists()
+    {
+        return $this->belongsToMany(Checklist::class, 'checklist_grupo_usuarios', 'id', 'user');
+    }
+
 }

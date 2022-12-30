@@ -51,8 +51,9 @@ class Checklist extends Model
         //                 ->get();
     }
 
-    public function grupo()
+    public function grupos()
     {
-        return $this->belongsToMany(GrupoChecklist::class);
+        return $this->hasMany(ChecklistGrupo::class);
     }
+
 }

@@ -16,7 +16,7 @@ class ChecklistGrupo extends Model
 
     public function checklists()
     {
-        return $this->hasMany(Checklist::class, 'checklist_grupo', 'id');
+        return $this->belongsToMany(Checklist::class);
     }
 
 }

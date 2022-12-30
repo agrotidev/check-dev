@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class GrupoUsuarioChecklist extends Model
+class ChecklistGrupoUsuario extends Model
 {
     use HasFactory;
 
@@ -14,6 +14,9 @@ class GrupoUsuarioChecklist extends Model
     
     protected $fillable = ['grupo_checklist', 'user'];
 
-
+    public function checklists()
+    {
+        return $this->belongsToMany(Checklist::class);
+    }
     
 }
