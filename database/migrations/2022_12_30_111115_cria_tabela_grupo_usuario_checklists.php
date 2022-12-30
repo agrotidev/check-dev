@@ -9,7 +9,7 @@ return new class extends Migration
 
     public function up()
     {
-        Schema::create('grupo_usuario_checklists', function (Blueprint $table) {
+        Schema::create('grupo_checklist_usuarios', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('grupo_checklist');
             $table->unsignedBigInteger('user');
