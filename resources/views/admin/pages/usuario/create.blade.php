@@ -22,17 +22,26 @@
             <div class="form-row">            
               <div class="form-gorup col-md-2">
                 <label >Matrícula</label><br>
-                <input class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="code" type="text"  placeholder="Digite seu código" maxlength="6">
+                <input class="form-control @error('code') is-invalid @enderror" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="code" type="text"  placeholder="Digite seu código" maxlength="6" value="{{ old('code') }}">
+                @error('code')
+                  <small class="text-danger">{{ $message }}</small>
+                @enderror
               </div>
                     
               <div class="form-group col-md-5">
                 <label >Nome</label>
-                <input class="form-control" name="name" type="text" placeholder="Digite seu nome">
+                <input class="form-control @error('name') is-invalid @enderror" name="name" type="text" placeholder="Digite seu nome" value="{{ old('name') }}">
+                @error('name')
+                  <small class="text-danger">{{ $message }}</small>
+                @enderror
               </div>
   
               <div class="form-group col-md-5">
                 <label >E-mail</label>
-                <input class="form-control" name="email" type="text" placeholder="Digite seu e-mail">                  
+                <input class="form-control @error('email') is-invalid @enderror" name="email" type="text" placeholder="Digite seu e-mail" value="{{ old('email') }}">    
+                @error('email')
+                  <small class="text-danger">{{ $message }}</small>
+                @enderror              
               </div>
           
             </div>
@@ -41,10 +50,14 @@
 
               <div class="form-group col-md-4">  
                 <label >Setor</label>
-                <select class="form-control" name="setor">
-                  <option >Selecione o setor</option>
+                <select class="form-control @error('setor') is-invalid @enderror" name="setor">
+                  <option >Selecione o setor</option>                  
                   @foreach ($setores as $setor)
-                    <option value="{{ $setor->id}}" type="text">{{ $setor->nome }}</option>
+                  @if (old('setor') == $setor->id)
+                    <option value="{{ $setor->id }}" selected>{{ $setor->nome }}</option>
+                  @else
+                    <option value="{{ $setor->id }}">{{ $setor->nome }}</option>
+                  @endif
                   @endforeach
                 </select>  
               </div> 
@@ -53,7 +66,7 @@
                 <label>Gerente</label>
                 <div class="toggle-flip">
                   <label class="form-check-label">
-                    <input type="checkbox" name="ismanager" value="ativo" checked><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
+                    <input type="checkbox" name="ismanager"  {{ old('ismanager') ? 'checked' : '' }} "><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
                   </label>
                 </div>
               </div>
@@ -62,7 +75,7 @@
                 <label>Lider</label>
                 <div class="toggle-flip">
                   <label class="form-check-label">
-                    <input type="checkbox" name="islider" value="ativo" checked><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
+                    <input type="checkbox" name="islider" {{ old('islider') ? 'checked' : '' }}><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
                   </label>
                 </div>
               </div>
@@ -71,7 +84,7 @@
                 <label>Mobile</label>
                 <div class="toggle-flip">
                   <label class="form-check-label">
-                    <input type="checkbox" name="mobile" value="ativo" checked><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
+                    <input type="checkbox" name="mobile" {{ old('mobile') ? 'checked' : '' }}><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
                   </label>
                 </div>
               </div>
@@ -80,7 +93,7 @@
                 <label>Ativo</label>
                 <div class="toggle-flip">
                   <label class="form-check-label">
-                    <input type="checkbox" name="active" value="ativo" checked><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
+                    <input type="checkbox" name="active"{{ old('active') ? 'checked' : '' }}><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
                   </label>
                 </div>
               </div>
