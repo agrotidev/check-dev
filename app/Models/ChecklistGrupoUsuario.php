@@ -10,8 +10,10 @@ class GrupoUsuarioChecklist extends Model
     use HasFactory;
 
     
-    protected $table = 'grupo_checklist_usuarios';
+    protected $table = 'checklist_grupo_usuarios';
     
     protected $fillable = ['grupo_checklist', 'user'];
+
+
     
 }

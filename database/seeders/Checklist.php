@@ -18,7 +18,7 @@ class Checklist extends Seeder
     {
         DB::table('checklists')->insert([
             [
-                'grupo_checklist' => 1,
+                'checklist_grupo' => 1,
                 'setor' => 1,
                 'tipo_tarefas' => 3,
                 'user' => 1,
@@ -29,7 +29,7 @@ class Checklist extends Seeder
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'grupo_checklist' => 1,
+                'checklist_grupo' => 1,
                 'setor' => 2,
                 'tipo_tarefas' => 3,
                 'user' => 1,

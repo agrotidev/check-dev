@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('grupo_checklists', function (Blueprint $table) {
+        Schema::create('checklist_grupos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('modulo');
             $table->unsignedBigInteger('user');
@@ -32,6 +32,6 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('grupo_checklists');
+        Schema::dropIfExists('checklist_grupos');
     }
 };

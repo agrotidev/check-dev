@@ -9,12 +9,12 @@ return new class extends Migration
 
     public function up()
     {
-        Schema::create('grupo_checklist_usuarios', function (Blueprint $table) {
+        Schema::create('checklist_grupo_usuarios', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('grupo_checklist');
+            $table->unsignedBigInteger('checklist_grupo');
             $table->unsignedBigInteger('user');
 
-            $table->foreign('grupo_checklist')->references('id')->on('grupo_checklists');
+            $table->foreign('checklist_grupo')->references('id')->on('checklist_grupos');
             $table->foreign('user')->references('id')->on('users');
             
             $table->timestamps();
@@ -23,6 +23,6 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('grupo_usuario_checklists');
+        Schema::dropIfExists('checklist_grupo_usuarios');
     }
 };

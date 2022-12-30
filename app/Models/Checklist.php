@@ -50,4 +50,9 @@ class Checklist extends Model
         //                 ->having('categoria_tarefa', '=', 1)
         //                 ->get();
     }
+
+    public function grupo()
+    {
+        return $this->belongsToMany(GrupoChecklist::class);
+    }
 }

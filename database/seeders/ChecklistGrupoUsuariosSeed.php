@@ -7,7 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class GrupoChecklistSeed extends Seeder
+class ChecklistGrupoUsuariosSeed extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,22 +16,17 @@ class GrupoChecklistSeed extends Seeder
      */
     public function run()
     {
-        DB::table('grupo_checklists')->insert([
+        
+        DB::table('checklist_grupo_usuarios')->insert([
             [
-                'modulo' => 1,
-                'user' => 1,
-                'nome' => 'GRUPO PADRÃO',
-                'descricao' => 'Grupo Padrão',
-                'ativo' => true,
+                'checklist_grupo' => 1,
+                'user' => 2,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'modulo' => 1,
-                'user' => 1,
-                'nome' => 'GRUPO NOVO',
-                'descricao' => 'Grupo Novo',
-                'ativo' => true,
+                'checklist_grupo' => 2,
+                'user' => 2,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
