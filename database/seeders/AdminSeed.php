@@ -7,7 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class AdminSeeed extends Seeder
+class AdminSeed extends Seeder
 {
     /**
      * Run the database seeds.

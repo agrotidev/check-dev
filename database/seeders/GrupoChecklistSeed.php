@@ -7,7 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class Checklist extends Seeder
+class GrupoChecklistSeed extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,29 +16,25 @@ class Checklist extends Seeder
      */
     public function run()
     {
-        DB::table('checklists')->insert([
+        DB::table('grupo_checklists')->insert([
             [
-                'grupo_checklist' => 1,
-                'setor' => 1,
-                'tipo_tarefas' => 3,
+                'modulo' => 1,
                 'user' => 1,
-                'nome' => 'Checklist 1',
-                'descricao' => 'Checklist 1 - primeiro checklist',
+                'nome' => 'GRUPO PADRÃO',
+                'descricao' => 'Grupo Padrão',
                 'ativo' => true,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'grupo_checklist' => 1,
-                'setor' => 2,
-                'tipo_tarefas' => 3,
+                'modulo' => 1,
                 'user' => 1,
-                'nome' => 'Checklist 2',
-                'descricao' => 'Checklist 2 - segundo checklist',
+                'nome' => 'GRUPO NOVO',
+                'descricao' => 'Grupo Novo',
                 'ativo' => true,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ]
+            ],
         ]);
     }
 }

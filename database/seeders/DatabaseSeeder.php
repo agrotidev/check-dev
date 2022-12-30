@@ -23,10 +23,11 @@ class DatabaseSeeder extends Seeder
 
         $this->call(DepartamentoSeed::class);
         $this->call(SetorSeed::class);
-        $this->call(AdminSeeed::class);
+        $this->call(AdminSeed::class);
         $this->call(UserSeed::class);
         $this->call(CategoriaTarefa::class);
         $this->call(TipoTarefa::class);
+        $this->call(GrupoChecklistSeed::class);
         $this->call(Checklist::class);
         $this->call(Tarefa::class);
     }
