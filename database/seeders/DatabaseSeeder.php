@@ -30,6 +30,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ChecklistGruposSeed::class);
         $this->call(Checklist::class);
         $this->call(Tarefa::class);
-        $this->call(ChecklistGrupoUsuariosSeed::class);
+        $this->call(ChecklistUsuariosSeed::class);
     }
 }

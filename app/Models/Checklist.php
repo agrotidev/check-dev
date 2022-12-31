@@ -16,7 +16,7 @@ class Checklist extends Model
         'grupo_checklist',
         'setor',
         'tipo_tarefas',
-        'user',  
+        'user',
         'nome',
         'descricao',
         'ativo'
@@ -51,9 +51,10 @@ class Checklist extends Model
         //                 ->get();
     }
 
-    public function grupos()
+
+    public function usuarios()
     {
-        return $this->hasMany(ChecklistGrupo::class);
+        return $this->belongsToMany(User::class, 'checklist_usuarios', 'checklist', 'user');
     }
 
 }

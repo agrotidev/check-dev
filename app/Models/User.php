@@ -29,7 +29,6 @@ class User extends Authenticatable
     ];
 
     protected $hidden = [
-        'id',
         'created_at',
         'updated_at',
         'email_verified_at',
@@ -42,9 +41,14 @@ class User extends Authenticatable
     ];
 
 
+    // public function grupos()
+    // {
+    //     return $this->belongsToMany(ChecklistGrupo::class, 'checklist_usuarios', 'id', 'user');
+    // }
+
     public function checklists()
     {
-        return $this->belongsToMany(Checklist::class, 'checklist_grupo_usuarios', 'id', 'user');
+        return $this->belongsToMany(Checklist::class, 'checklist_usuarios', 'user', 'checklist');
     }
 
 }

@@ -9,20 +9,18 @@ return new class extends Migration
 
     public function up()
     {
-        Schema::create('checklist_grupo_usuarios', function (Blueprint $table) {
+        Schema::create('checklist_usuarios', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('checklist_grupo');
+            $table->unsignedBigInteger('checklist');
             $table->unsignedBigInteger('user');
 
-            $table->foreign('checklist_grupo')->references('id')->on('checklist_grupos');
+            $table->foreign('checklist')->references('id')->on('checklists');
             $table->foreign('user')->references('id')->on('users');
-            
-            $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('checklist_grupo_usuarios');
+        Schema::dropIfExists('checklist_usuarios');
     }
 };

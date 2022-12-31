@@ -29,7 +29,7 @@ return new class extends Migration
             $table->foreign('setor')->references('id')->on('setores');
             $table->foreign('tipo_tarefas')->references('id')->on('tipo_tarefas');
             $table->foreign('user')->references('id')->on('users');
-            
+
             $table->timestamps();
         });
     }
