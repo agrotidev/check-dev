@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\Imports\DepartamentoImportController;
 use App\Http\Controllers\Admin\UsuarioController;
 use App\Http\Controllers\Manager\Auth\AuthManagerController;
 use App\Http\Controllers\Manager\ChecklistController;
+use App\Http\Controllers\Manager\ChecklistGrupoController;
 use App\Http\Controllers\Manager\ManagerController;
 use App\Http\Controllers\Manager\TarefasChecklistController;
 use App\Http\Controllers\TesteAgrupamentoController;
@@ -38,7 +39,7 @@ Route::prefix('')->group(function() {
     Route::get('/reset/{token}', [AuthManagerController::class, 'showResetPassword'])->name('manager.reset.token');
     Route::post('/reset', [AuthManagerController::class, 'sendResetPassword'])->name('manager.reset');
 
-    
+
 
     // Checklist
     Route::prefix('dashboard')->name('manager.')->group(function () {
@@ -46,7 +47,9 @@ Route::prefix('')->group(function() {
         // MANAGER DASHBOARD
         Route::get('/', [ManagerController::class, 'index'])->name('dash');
 
+        // CHECKLIST GRUPOS
         Route::get('/check-group/{id}', [TesteAgrupamentoController::class, 'index'])->name('agrupamento.teste.index');
+        Route::get('/checklist-grupo', [ChecklistGrupoController::class, 'index'])->name('checklist.grupo.index');
 
         // CHECKLIST TAREFAS
         Route::post('/checklist/{id}/tarefas', [TarefasChecklistController::class, 'store'])->name('checklist.tarefas.store');
@@ -59,7 +62,7 @@ Route::prefix('')->group(function() {
         Route::post('/checklist', [ChecklistController::class, 'store'])->name('checklist.store');
         Route::get('/checklist/create', [ChecklistController::class, 'create'])->name('checklist.create');
         Route::get('/checklist', [ChecklistController::class, 'index'])->name('checklist.index');
-        
+
     });
 
 });
@@ -104,14 +107,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/setor', [SetorController::class, 'index'])->name('setor.index');
 
     // IMPORT
-    Route::post('/import/departamento', [DepartamentoImportController::class, 'importExcel'])->name('import.departamento.xls'); 
-    Route::get('/import/departamento', [DepartamentoImportController::class, 'index'])->name('import.departamento.index'); 
+    Route::post('/import/departamento', [DepartamentoImportController::class, 'importExcel'])->name('import.departamento.xls');
+    Route::get('/import/departamento', [DepartamentoImportController::class, 'index'])->name('import.departamento.index');
 
 
     // USUARIO
-    Route::post('/usuario', [UsuarioController::class, 'store'])->name('usuario.store'); 
-    Route::get('/usuario/create', [UsuarioController::class, 'create'])->name('usuario.create'); 
-    Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index'); 
+    Route::post('/usuario', [UsuarioController::class, 'store'])->name('usuario.store');
+    Route::get('/usuario/create', [UsuarioController::class, 'create'])->name('usuario.create');
+    Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index');
 
     // USUARIO
     Route::get('/administrators/create', [AdminController::class, 'create'])->name('administrador.create');
