@@ -35,7 +35,6 @@
                         <a href="#" class="btn btn-warning fa fa-pencil-square-o"></a>
                     </td>
                   </tr>
-                  @endforeach
                 </tbody>
               </table>
             </div>

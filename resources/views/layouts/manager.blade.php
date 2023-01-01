@@ -16,7 +16,7 @@
 <li class="treeview {{ ( Request::routeIs('manager.checklist.*') == Route::current()->getName())  ? 'is-expanded' : '' }}""><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-check-square-o"></i><span class="app-menu__label">Checklist</span><i class="treeview-indicator fa fa-angle-right"></i></a>
     <ul class="treeview-menu">
         <li><a class="treeview-item {{ ( Request::routeIs('manager.checklist.index') == Route::current()->getName())  ? 'active' : '' }}" href="{{route('manager.checklist.index')}}"><i class="icon fa fa-check-square-o"></i><span class="app-menu__label">Checklists</span></a></li>
-        <li><a class="treeview-item" href="#"><i class="icon fa fa-object-group"></i><span class="app-menu__label">Grupos</span></a></li>
+        <li><a class="treeview-item {{ ( Request::routeIs('manager.checklist.grupo.index') == Route::current()->getName())  ? 'active' : '' }}" href="{{route('manager.checklist.grupo.index')}}"><i class="icon fa fa-object-group"></i><span class="app-menu__label">Grupos</span></a></li>
     </ul>
 </li>
 @endif

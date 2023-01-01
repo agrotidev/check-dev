@@ -12,7 +12,7 @@ class ChecklistGrupoController extends Controller
     {
         $checklistGrupos = ChecklistGrupo::where('ativo', true)->latest('id')->paginate(20);
 
-        return view('manager.pages.checklist.index', [
+        return view('manager.pages.checklist-grupo.index', [
             'checklistGrupos' => $checklistGrupos
         ]);
     }
