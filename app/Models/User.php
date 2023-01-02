@@ -55,7 +55,9 @@ class User extends Authenticatable
 
     public function checklists()
     {
-        return $this->belongsToMany(Checklist::class, 'checklist_usuarios', 'user', 'checklist')->distinct();
+        return $this->belongsToMany(Checklist::class, 'checklist_usuarios', 'user', 'checklist')
+                    ->where('ativo', true)
+                    ->distinct();
     }
 
 }
