@@ -93,7 +93,7 @@
                 <label>Ativo</label>
                 <div class="toggle-flip">
                   <label class="form-check-label">
-                    <input type="checkbox" name="active"{{ old('active') ? 'checked' : '' }}><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
+                    <input type="checkbox" name="active" {{ old('active') ? 'checked' : '' }}><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
                   </label>
                 </div>
               </div>
