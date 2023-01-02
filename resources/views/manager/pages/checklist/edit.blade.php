@@ -49,7 +49,8 @@
             <label class="control-label pt-2">Ativo</label>
             <div class="toggle-flip">
               <label class="form-check-label">
-                <input type="checkbox" name="ativo" {{ old('active') ? 'checked' : '' }}><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
+                
+                <input type="checkbox" name="ativo" value="{{ old('ativo') ? 'checked' : '' }}" {{ $checklist->ativo == true ? 'checked': '' }} ><span  class="flip-indecator" data-toggle-on="SIM" data-toggle-off="NAO"></span>
               </label>
             </div>
           </div>

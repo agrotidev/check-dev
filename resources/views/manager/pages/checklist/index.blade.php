@@ -31,8 +31,8 @@
                     <td>{{ $checklist->nome }}</td>
                     <td>{{ $checklist->tipo_tarefas }}</td>
                     <td>{{$checklist->setor}}</td>
-                    <td>{{$checklist->user}}</td>
-                    <td>{{ $checklist->ativo == '1' ? 'SIM' : 'NÃO' }}</td>
+                    <td>{{$checklist->user}}</td>                    
+                    <td>@if ($checklist->ativo) <span class="badge badge-success">Sim</span>  @else <span class="badge badge-danger">Não</span> @endif</td>
                     <td>
                         <a href="{{ route('manager.checklist.tarefas.index', $checklist->id) }}" class="btn btn-info fa fa-eye"></a>
                         <a href="{{ route('manager.checklist.edit', $checklist->id) }}" class="btn btn-warning fa fa-pencil-square-o"></a>
