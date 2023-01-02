@@ -9,7 +9,7 @@
         <div class="col-md-12">
           <div class="tile">
             <div class="form-group">
-              <a href="#"><button class="btn btn-primary btn-sm mx-2" type="button">Criar Grupo</button></a>
+              <a href="{{ route('manager.checklist.grupo.create') }}"><button class="btn btn-primary btn-sm mx-2" type="button">Criar Grupo</button></a>
             </div>
             <div class="table-responsive-sm">
               <table class="table table-striped table-sm">
@@ -17,8 +17,8 @@
                   <tr class="bg-dark text-white">
                     <th width="80">COD</th>
                     <th width="200">Nome</th>
-                    <th>Checklists</th>
-                    <th>Usuários</th>
+                    <th class="text-center">Checklists</th>
+                    <th class="text-center">Usuários</th>
                     <th>Ativo</th>
                     <th class="text-center" width="100">Opções</th>
                   </tr>
@@ -27,8 +27,8 @@
                   <tr>
                     <td>1</td>
                     <td>Grupo Nome</td>
-                    <td>2</td>
-                    <td>2</td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">2</td>
                     <td>SIM</td>
                     <td>
                         <a href="#" class="btn btn-info fa fa-eye"></a>

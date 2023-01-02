@@ -49,6 +49,7 @@ Route::prefix('')->group(function() {
 
         // CHECKLIST GRUPOS
         Route::get('/check-group/{id}', [TesteAgrupamentoController::class, 'index'])->name('agrupamento.teste.index');
+        Route::get('/checklist-grupo/create', [ChecklistGrupoController::class, 'create'])->name('checklist.grupo.create');
         Route::get('/checklist-grupo', [ChecklistGrupoController::class, 'index'])->name('checklist.grupo.index');
 
         // CHECKLIST TAREFAS

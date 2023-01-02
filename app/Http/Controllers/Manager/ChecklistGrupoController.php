@@ -16,4 +16,10 @@ class ChecklistGrupoController extends Controller
             'checklistGrupos' => $checklistGrupos
         ]);
     }
+
+    public function create()
+    {
+
+        return view('manager.pages.checklist-grupo.create');
+    }
 }
