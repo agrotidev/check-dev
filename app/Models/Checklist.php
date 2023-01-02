@@ -14,6 +14,7 @@ class Checklist extends Model
 
     protected $fillable = [
         'grupo_checklist',
+        'modulo',
         'setor',
         'tipo_tarefas',
         'user',

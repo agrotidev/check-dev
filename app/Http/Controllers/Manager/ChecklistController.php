@@ -15,8 +15,8 @@ class ChecklistController extends Controller
 {
     public function index()
     {
-        $setor = Auth::user()->setor;
-        $checklists = Checklist::where('setor', $setor)->latest('id')->paginate(20);
+        $modulo = Auth::user()->modulo;
+        $checklists = Checklist::where('modulo', $modulo)->latest('id')->paginate(20);
 
         return view('manager.pages.checklist.index', [
             'checklists' => $checklists
@@ -37,6 +37,7 @@ class ChecklistController extends Controller
     public function store(Request $request)
     {
         $request['user'] = Auth::user()->id;
+        $request['modulo'] = Auth::user()->modulo;
         $request['ativo']  = (!isset($request['ativo']))? false : true;
 
         
@@ -47,6 +48,7 @@ class ChecklistController extends Controller
             'nome' => 'required|string|min:3',
             'ativo' => 'required'
         ]);
+
         
         if ($validator->passes()) {
             
