@@ -20,6 +20,23 @@ class ChecklistGrupoController extends Controller
         ]);
     }
 
+    public function show($id)
+    {
+
+        if (!$checklistGrupo = ChecklistGrupo::where('id', $id)->where('ativo', true)->first()) {
+            return redirect()->route('manager.dash');
+        }
+    
+        if ($checklistGrupo->modulo != Auth::user()->modulo ) {
+            return redirect()->route('manager.dash');
+        }
+
+
+        return view('manager.pages.checklist-grupo.show', [
+            'checklistGrupo' => $checklistGrupo
+        ]);
+    }
+
     public function create()
     {
         return view('manager.pages.checklist-grupo.create');

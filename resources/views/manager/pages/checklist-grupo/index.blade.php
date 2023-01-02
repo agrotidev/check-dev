@@ -24,17 +24,19 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($checklistGrupos as $grupo)
                   <tr>
-                    <td>1</td>
-                    <td>Grupo Nome</td>
+                    <td>{{ $grupo->id }}</td>
+                    <td>{{ $grupo->nome }}</td>
                     <td class="text-center">2</td>
                     <td class="text-center">2</td>
                     <td>SIM</td>
                     <td>
-                        <a href="#" class="btn btn-info fa fa-eye"></a>
+                        <a href="{{ route('manager.checklist.grupo.show', $grupo->id) }}" class="btn btn-info fa fa-eye"></a>
                         <a href="#" class="btn btn-warning fa fa-pencil-square-o"></a>
                     </td>
                   </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
