@@ -19,7 +19,7 @@
 
       <div class="form-group">
           <label class="control-label">E-mail</label>
-          <input class="form-control" type="email" name="email" placeholder="Email" autofocus>
+          <input class="form-control" type="email" name="email" placeholder="Email" value="{{ old('email') }}" autofocus>
       </div>
       <div class="form-group">
           <label class="control-label">SENHA</label>

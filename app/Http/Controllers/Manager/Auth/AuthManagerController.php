@@ -38,7 +38,7 @@ class AuthManagerController extends Controller
             return redirect()->intended(route('manager.dash'));
         }
 
-        return redirect()->back()->withInputs($request->only('email', 'remember'))->with('error', 'E-mail ou senha incorreto!');
+        return redirect()->route('login')->withInputs($request->only('email', 'remember'))->with('error', 'E-mail ou senha incorreto!');
     }
 
     protected function validaLogin(Request $request)
