@@ -35,6 +35,15 @@ class ChecklistGruposSeed extends Seeder
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
+            [
+                'modulo' => 1,
+                'user' => 1,
+                'nome' => 'GRUPO 3',
+                'descricao' => 'Grupo 3',
+                'ativo' => true,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ],
         ]);
     }
 }

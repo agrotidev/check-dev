@@ -12,7 +12,7 @@ class ChecklistUsuario extends Model
 
     protected $table = 'checklist_usuarios';
 
-    protected $fillable = ['checklist', 'user'];
+    protected $fillable = ['checklist', 'user', 'grupo'];
 
     public function checklists()
     {

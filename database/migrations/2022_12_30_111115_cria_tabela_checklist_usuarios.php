@@ -13,9 +13,11 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('checklist');
             $table->unsignedBigInteger('user');
+            $table->unsignedBigInteger('grupo');
 
             $table->foreign('checklist')->references('id')->on('checklists');
             $table->foreign('user')->references('id')->on('users');
+            $table->foreign('grupo')->references('id')->on('checklist_grupos');
         });
     }
 

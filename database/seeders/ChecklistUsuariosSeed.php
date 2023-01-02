@@ -21,14 +21,27 @@ class ChecklistUsuariosSeed extends Seeder
             [
                 'checklist' => 1,
                 'user' => 2,
+                'grupo' => 1
             ],
             [
                 'checklist' => 2,
                 'user' => 2,
+                'grupo' => 1
             ],
             [
                 'checklist' => 2,
                 'user' => 1,
+                'grupo' => 3
+            ],
+            [
+                'checklist' => 2,
+                'user' => 2,
+                'grupo' => 3
+            ],
+            [
+                'checklist' => 1,
+                'user' => 1,
+                'grupo' => 3
             ],
         ]);
     }

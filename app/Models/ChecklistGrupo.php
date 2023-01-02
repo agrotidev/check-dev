@@ -14,9 +14,9 @@ class ChecklistGrupo extends Model
 
     protected $fillable = ['modulo', 'user', 'nome', 'descricao', 'ativo'];
 
-    public function checklists()
-    {
-        return $this->belongsToMany(Checklist::class);
-    }
+    // public function checklists()
+    // {
+    //     return $this->hasMany(Checklist::class);
+    // }
 
 }
