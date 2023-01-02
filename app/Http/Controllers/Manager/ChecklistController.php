@@ -15,7 +15,8 @@ class ChecklistController extends Controller
 {
     public function index()
     {
-        $checklists = Checklist::latest('id')->paginate(20);
+        $setor = Auth::user()->setor;
+        $checklists = Checklist::where('setor', $setor)->latest('id')->paginate(20);
 
         return view('manager.pages.checklist.index', [
             'checklists' => $checklists

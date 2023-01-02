@@ -14,14 +14,18 @@
       @endif
 
       <div class="col-md-12 mx-0 px-0">
-        <form method="post" action="#">
+        <form method="post" action="{{ route('manager.checklist.grupo.store') }}">
           @csrf
+
           <div class="form-group">
 
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label >Nome</label>
-                <input class="form-control" value="{{ old('nome') }}" name="nome" type="text" placeholder="Digite o nome do Grupo">
+                <input class="form-control @error('nome') is-invalid @enderror" value="{{ old('nome') }}" name="nome" type="text" placeholder="Digite o nome do Grupo">
+                @error('nome')
+                  <small class="text-danger">{{ $message }}</small>
+                @enderror 
               </div>
             </div>
 
