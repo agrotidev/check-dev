@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Api\Off;
 
 use App\Api\ApiMessage;
 use App\Http\Controllers\Controller;
+use App\Models\Departamento;
+use App\Models\Setor;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -33,16 +36,16 @@ class AuthController extends Controller
             return response()->json($message->getMessage(), 401);
         }
 
-        if (!($user->password_mobile === md5($credenciais['password'])))
-        {
+        if (!(Hash::check($credenciais['password'], $user->password_mobile))) {
             $message = new ApiMessage('Usuario ou senha invalido');
-            return response()->json($message->getMessage(), 401);
-        }
+            return response()->json($message->getMessage(), 200);            
+         }
 
         // Genreate token
-        $token = base64_encode($user->code.'.'.$user->email);
+        $token = bcrypt($user->code.'.'.$user->email.'.'.$user->password_mobile);
 
         $user = [
+            'user' => $user->id,
             'setor' => $user->setor,
             'code' => $user->code,
             'name' => $user->name,
@@ -50,7 +53,10 @@ class AuthController extends Controller
             'mobile' => $user->mobile
         ];
 
-        $usuarios = User::all()->makeVisible(['code', 'nome', 'email', 'password_mobile'])->makeHidden(['active', 'web']);
+        // ALL DATA IMPORT
+        $usuarios = User::where('code', $user['code'])->get()->makeVisible(['code', 'nome', 'email', 'password_mobile'])->makeHidden(['active', 'web']);
+        $departamentos = Departamento::where('ativo', true)->get();
+        $setores = Setor::where('ativo', true)->get();
 
         
 
@@ -60,6 +66,8 @@ class AuthController extends Controller
                 'token' => $token,
                 'user_login' => $user,
                 'usuarios' => $usuarios,
+                'departamentos' => $departamentos,
+                'setor' => $setores,
                 'checklist' => $checklist->checklists
             ]
         ], 200);
