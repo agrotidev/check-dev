@@ -21,6 +21,19 @@ class Tarefa extends Model
         'ativo'
     ];
 
+    public function toArray()
+    {
+        return [
+        'id' => $this->id,
+        'checklist' => $this->checklist,
+        'categoria_tarefa' => $this->categoria_tarefa,
+        'nome' => $this->nome,
+        'descricao' => $this->cod_departamento,
+        'valor' => $this->valor,
+        'ativo' => $this->ativo,
+        ];
+    }
+
 
     public function checklist()
     {

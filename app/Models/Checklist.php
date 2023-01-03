@@ -23,6 +23,20 @@ class Checklist extends Model
         'ativo'
     ];
 
+    public function toArray()
+    {
+        return [
+            'id' => $this->id,
+            'modulo' => $this->modulo,
+            'setor' => $this->setor,
+            'tipo_tarefas' => $this->tipo_tarefas,
+            'user' => $this->user,
+            'nome' => $this->nome,
+            'descricao' => $this->descricao,
+            'ativo' => $this->ativo,
+        ];
+    }
+
     public function tarefas()
     {
         return $this->hasMany(Tarefa::class, 'checklist', 'id');

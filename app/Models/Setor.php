@@ -13,6 +13,17 @@ class Setor extends Model
 
     protected $fillable = ['cod_setor', 'departamento', 'nome', 'ativo'];
 
+    public function toArray()
+    {
+        return [
+            'id' => $this->id,
+            'departamento' => $this->departamento,
+            'cod_setor' => $this->cod_setor,
+            'name' => $this->nome,
+            'ativo' => $this->ativo,
+        ];
+    }
+
     public function departamento()
     {
         return $this->hasOne(Departamento::class, 'cod_departamento', 'departamento');

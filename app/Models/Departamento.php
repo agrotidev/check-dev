@@ -13,6 +13,16 @@ class Departamento extends Model
 
     protected $fillable = ['cod_departamento', 'nome', 'ativo'];
 
+    public function toArray()
+    {
+        return [
+        'id' => $this->id,
+        'cod_departamento' => $this->cod_departamento,
+        'name' => $this->nome,
+        'ativo' => $this->ativo,
+        ];
+    }
+
     public function setores() 
     {
         return $this->hasMany(Setor::class, 'departamento', 'cod_departamento');

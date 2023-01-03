@@ -13,6 +13,16 @@ class CategoriaTarefas extends Model
 
     protected $fillable = ['nome', 'descricao', 'peso', 'ativo'];
 
+    public function toArray()
+    {
+        return [
+        'id' => $this->id,
+        'nome' => $this->nome,
+        'descricao' =>  $this->cod_departamento,
+        'ativo' => $this->ativo,
+        ];
+    }
+
 
     public function tarefa()
     {

@@ -6,6 +6,7 @@ use App\Api\ApiMessage;
 use App\Http\Controllers\Controller;
 use App\Models\Departamento;
 use App\Models\Setor;
+use App\Models\Tarefa;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -57,6 +58,7 @@ class AuthController extends Controller
         $usuarios = User::where('code', $user['code'])->get()->makeVisible(['code', 'nome', 'email', 'password_mobile'])->makeHidden(['active', 'web']);
         $departamentos = Departamento::where('ativo', true)->get();
         $setores = Setor::where('ativo', true)->get();
+        $tarefas = Tarefa::where('ativo', true)->get();
 
         
 
@@ -67,8 +69,9 @@ class AuthController extends Controller
                 'user_login' => $user,
                 'usuarios' => $usuarios,
                 'departamentos' => $departamentos,
-                'setor' => $setores,
-                'checklist' => $checklist->checklists
+                'setores' => $setores,
+                'checklists' => $checklist->checklists,
+                'tarefas' => $tarefas
             ]
         ], 200);
     
