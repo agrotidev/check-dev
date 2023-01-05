@@ -57,11 +57,6 @@ class SetorController extends Controller
         }
     }
 
-    public function destroy($id)
-    {
-        $setor = $this->repository->where('id', $id)->first();
-    }
-
     public function edit($id)
     {
         $setor = Setor::with('departamento')->find($id);
@@ -94,5 +89,10 @@ class SetorController extends Controller
         } else {
             return redirect()->back()->withInput($request->only('setor'))->with('error', 'Existe campos vazio!');
         }
+    }
+
+    public function destroy($id)
+    {
+        $setor = $this->repository->where('id', $id)->first();
     }
 }

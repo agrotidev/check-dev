@@ -31,14 +31,14 @@
               @foreach ($usuarios as $usuario)
               <tr>
                 <td  id="demoNotify">{{$usuario->code}}</td>
-                <td>{{$usuario->name}}</td>
+                <td>{{ $usuario->name}}</td>
                 <td>{{ $usuario->email }}</td>
                 <td>{{ $usuario->ismanager }}</td>
                 <td>{{ $usuario->islider }}</td>
                 <td>{{ $usuario->mobile }}</td>
                 <td>{{ $usuario->active == '1' ? 'SIM' : 'NÃO' }}</td>
                 <td>
-                    <a href="#" class="btn btn-warning fa fa-pencil-square-o"></a>
+                    <a href="{{ route('admin.usuario.edit', $usuario->id) }}" class="btn btn-warning fa fa-pencil-square-o"></a>
                 </td>
               </tr>                  
               @endforeach
@@ -51,26 +51,5 @@
       </div>
     </div>
   </div>
-    
-@endsection
-
-@section('scripts')
-
-<script>
-  
-  function alerta(departamento) {
-    return Swal.fire({
-            title: 'Deseja apagar o registro?',
-            showCancelButton: true,
-            cancelButtonText: 'NÃO',
-            confirmButtonText: 'SIM',
-          }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
-              Swal.fire('Deletado!', 'Registro apagado com sucesso!', 'success')
-            }
-          });
-  }
-</script>
     
 @endsection

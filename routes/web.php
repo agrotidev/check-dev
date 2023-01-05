@@ -115,6 +115,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
     // USUARIO
+    Route::put('/usuario/{id}/editar', [UsuarioController::class, 'update'])->name('usuario.update');
+    Route::get('/usuario/{id}/editar', [UsuarioController::class, 'edit'])->name('usuario.edit');
     Route::post('/usuario', [UsuarioController::class, 'store'])->name('usuario.store');
     Route::get('/usuario/create', [UsuarioController::class, 'create'])->name('usuario.create');
     Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index');
