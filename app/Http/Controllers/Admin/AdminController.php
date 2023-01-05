@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\AdminStoreRequest;
 use App\Models\Admin;
 use App\Models\Setor;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr as Toast;
 
 class AdminController extends Controller
 {
@@ -32,6 +33,15 @@ class AdminController extends Controller
     {
         $request['active']  = (!isset($request['active']))? false : true;
 
-        dd($request->all());
+        try {
+            dd($request->all());
+            Admin::create($request->all());            
+
+            Toast::success('Criado com sucesso!');
+            return redirect()->route('admin.administrador.index');
+        } catch (\Exception $e) {
+            Toast::error('Erro ao cadastrar!');
+            return;
+        }
     }
 }

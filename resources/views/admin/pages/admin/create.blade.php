@@ -47,6 +47,18 @@
             </div>
 
             <div class="form-row">
+              <div class="form-group col-md-3">
+                <label>Senha</label>
+                <input class="form-control" name="password" type="password" placeholder="Digite a senha" value="{{ old('password') }}">   
+              </div>
+
+              <div class="form-group col-md-3">
+                <label>Confirma a senha</label>
+                <input class="form-control" name="password_confirmed" type="password" placeholder="Digite a senha" value="{{ old('password_confirmed') }}">   
+              </div>
+            </div>
+
+            <div class="form-row">
 
               <div class="form-group col-md-1">
                 <label>Ativo</label>
