@@ -25,7 +25,8 @@ class UserUpdateRequest extends FormRequest
         return [
             'required' => 'Este campo é obrigatório',
             'min' => 'Dever conter no minimo 3 caracteres',
-            'email' => 'Este e-mail já está sendo utilizado!',
+            'email' => 'Deve ser um e-mail válido',
+            'unique:users' => 'Este e-mail já está sendo utilizado!',
         ];
     }
 }

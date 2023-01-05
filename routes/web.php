@@ -97,15 +97,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::put('/departamento/{cod_departamento}/editar', [DepartamentoController::class, 'update'])->name('departamento.update');
     Route::get('/departamento/{cod_deparmento}/editar', [DepartamentoController::class, 'edit'])->name('departamento.edit');
     Route::delete('/departamento/{cod_departamento}', [DepartamentoController::class, 'destroy'])->name('departamento.destroy');
+    Route::post('/departamento/create', [DepartamentoController::class, 'store'])->name('departamento.store');
     Route::get('/departamento/create', [DepartamentoController::class, 'create'])->name('departamento.create');
-    Route::post('/departamento', [DepartamentoController::class, 'store'])->name('departamento.store');
     Route::get('/departamento', [DepartamentoController::class, 'index'])->name('departamento.index');
 
     // SETOR
     Route::put('/setor/{id}/editar', [SetorController::class, 'update'])->name('setor.update');
     Route::get('/setor/{id}/editar', [SetorController::class, 'edit'])->name('setor.edit');
     Route::delete('/setor/{cod_setor}', [Setor::class, 'destroy'])->name('setor.destory');
-    Route::post('/setor', [SetorController::class, 'store'])->name('setor.store');
+    Route::post('/setor/create', [SetorController::class, 'store'])->name('setor.store');
     Route::get('/setor/create', [SetorController::class, 'create'])->name('setor.create');
     Route::get('/setor', [SetorController::class, 'index'])->name('setor.index');
 
@@ -117,11 +117,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // USUARIO
     Route::put('/usuario/{id}/editar', [UsuarioController::class, 'update'])->name('usuario.update');
     Route::get('/usuario/{id}/editar', [UsuarioController::class, 'edit'])->name('usuario.edit');
-    Route::post('/usuario', [UsuarioController::class, 'store'])->name('usuario.store');
+    Route::post('/usuario/create', [UsuarioController::class, 'store'])->name('usuario.store');
     Route::get('/usuario/create', [UsuarioController::class, 'create'])->name('usuario.create');
     Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index');
 
     // USUARIO
+    Route::post('/administrators/create', [AdminController::class, 'store'])->name('administrador.store');
     Route::get('/administrators/create', [AdminController::class, 'create'])->name('administrador.create');
     Route::get('/administrators', [AdminController::class, 'index'])->name('administrador.index');
 

@@ -14,24 +14,34 @@
       @endif
 
       <div class="col-md-12 mx-0 px-0">
-        <form method="post" action="#">
+        <form method="post" action="{{ route('admin.administrador.store') }}">
           @csrf
+
           <div class="form-group">
             
             <div class="form-row">            
               <div class="form-gorup col-md-2">
                 <label >Matrícula</label><br>
-                <input class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="code" type="number"  placeholder="Digite seu código" maxlength="6">
+                <input class="form-control  @error('code') is-invalid @enderror" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="code" type="number"  placeholder="Digite seu código" maxlength="6" value="{{ old('code') }}">
+                @error('code')
+                  <small class="text-danger">{{ $message }}</small>
+                @enderror
               </div>
                     
               <div class="form-group col-md-5">
                 <label >Nome</label>
-                <input class="form-control" name="name" type="text" placeholder="Digite seu nome">
+                <input class="form-control @error('name') is-invalid @enderror" name="name" type="text" placeholder="Digite seu nome" value="{{ old('name') }}">
+                @error('name')
+                  <small class="text-danger">{{ $message }}</small>
+                @enderror
               </div>
   
               <div class="form-group col-md-5">
                 <label >E-mail</label>
-                <input class="form-control" name="name" type="text" placeholder="Digite seu e-mail">                  
+                <input class="form-control @error('email') is-invalid @enderror" name="email" type="text" placeholder="Digite seu e-mail" value="{{ old('email') }}">   
+                @error('email')
+                  <small class="text-danger">{{ $message }}</small>
+                @enderror               
               </div>
           
             </div>
