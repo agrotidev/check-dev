@@ -3,8 +3,7 @@
   {{-- Header --}}
   <head>
     <title> @yield('title') </title>
-
-    @notifyCss
+    
     @include('layouts.includes.partials.styles')
 
     {{-- LINK --}}
