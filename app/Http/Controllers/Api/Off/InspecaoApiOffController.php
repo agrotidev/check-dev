@@ -11,8 +11,23 @@ class InspecaoApiOffController extends Controller
     public function integraInspecao(Request $request)
     {
         try {
+            // Recupero as tarefas da inspeção
+            $tarefasInspencao = $request->tarefas;
             $imagens = $request->file('imagens');
             $imagensUpload = [];
+            $tarefas = [];
+
+
+            // Verifico se existe tarefa da inspeção
+            if ($tarefasInspencao) {
+                foreach ($tarefasInspencao as $index => $tarefa) {
+                    $tarefas[$index] = $tarefa;
+                }
+            }
+
+            // Faço a desserialização do objeto de tarefas que veio serializado para json novamente
+            $tarefas = json_decode($tarefas[0]);
+            
 
             // Verifica se tem imagem
             if ($imagens) {
@@ -24,9 +39,14 @@ class InspecaoApiOffController extends Controller
                 }
             }
 
+
+
+            // $seria = unserialize($tarefasArray[0]->tarefas);
+
             return response()->json([
                 'data' =>  $request->all(),
-                'imagens' => $imagensUpload
+                'imagens' => $imagensUpload,
+                'tarefas' => $tarefas
             ], 200);
         } catch (\Exception $e) {
             $message = new ApiMessage($e->getMessage());
