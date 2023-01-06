@@ -21,7 +21,7 @@ class DepartamentoImportController extends Controller
 
 
         $validator = Validator::make($request->all(), [
-            'file' => 'required|max:5000|mimes:xlsx,xls'
+            'file' => 'required|max:5000|mimes:xlsx,xls,csv'
 
         ]);
 
@@ -68,6 +68,10 @@ class DepartamentoImportController extends Controller
                         {   
                             // Se nome do departamenot estiver sido alterado, então ignora a alteração
                             if ($depart->nome != $nome) {
+                                $depart->update([
+                                    'cod_departamento' => $cod_departamento,
+                                    'nome' => $nome,
+                                ]);
 
                             } else {
                                 // Se existe atualizo o departamento
