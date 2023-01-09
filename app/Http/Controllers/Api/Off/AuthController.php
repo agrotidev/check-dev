@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Api\Off;
 
 use App\Api\ApiMessage;
 use App\Http\Controllers\Controller;
+use App\Models\CategoriaTarefas;
 use App\Models\Departamento;
 use App\Models\Setor;
 use App\Models\Tarefa;
+use App\Models\TipoTarefa;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -59,6 +61,8 @@ class AuthController extends Controller
         $departamentos = Departamento::where('ativo', true)->get();
         $setores = Setor::where('ativo', true)->get();
         $tarefas = Tarefa::where('ativo', true)->get();
+        $categoria_tarefas = CategoriaTarefas::where('ativo', true)->get();
+        $tipo_tarefas = TipoTarefa::where('ativo', true)->get();
 
         
 
@@ -70,8 +74,10 @@ class AuthController extends Controller
                 'usuarios' => $usuarios,
                 'departamentos' => $departamentos,
                 'setores' => $setores,
-                'checklists' => $checklist->checklists,
-                'tarefas' => $tarefas
+                'categoria_tarefas' => $categoria_tarefas,
+                'tipo_tarefas' => $tipo_tarefas,
+                'tarefas' => $tarefas,
+                'checklists' => $checklist->checklists
             ]
         ], 200);
     
