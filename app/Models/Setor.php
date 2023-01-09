@@ -19,7 +19,7 @@ class Setor extends Model
             'id' => $this->id,
             'departamento' => $this->departamento,
             'cod_setor' => $this->cod_setor,
-            'name' => $this->nome,
+            'nome' => $this->nome,
             'ativo' => $this->ativo,
         ];
     }

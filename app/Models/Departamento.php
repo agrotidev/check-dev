@@ -18,7 +18,7 @@ class Departamento extends Model
         return [
         'id' => $this->id,
         'cod_departamento' => $this->cod_departamento,
-        'name' => $this->nome,
+        'nome' => $this->nome,
         'ativo' => $this->ativo,
         ];
     }
