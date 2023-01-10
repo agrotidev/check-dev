@@ -17,7 +17,7 @@ class Checklist extends Model
         'modulo',
         'setor',
         'tipo_tarefas',
-        'user',
+        'usuario',
         'nome',
         'descricao',
         'ativo'
@@ -30,7 +30,7 @@ class Checklist extends Model
             'modulo' => $this->modulo,
             'setor' => $this->setor,
             'tipo_tarefas' => $this->tipo_tarefas,
-            'user' => $this->user,
+            'usuario' => $this->user,
             'nome' => $this->nome,
             'descricao' => $this->descricao,
             'ativo' => $this->ativo,
@@ -69,7 +69,7 @@ class Checklist extends Model
 
     public function usuarios()
     {
-        return $this->belongsToMany(User::class, 'checklist_usuarios', 'checklist', 'user');
+        return $this->belongsToMany(User::class, 'checklist_usuarios', 'checklist', 'usuario');
     }
 
 }

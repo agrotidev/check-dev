@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('modulo');
             $table->unsignedBigInteger('setor');
             $table->unsignedBigInteger('tipo_tarefas');
-            $table->unsignedBigInteger('user');
+            $table->unsignedBigInteger('usuario');
 
 
             $table->string('nome');
@@ -28,7 +28,7 @@ return new class extends Migration
             $table->foreign('modulo')->references('id')->on('setores');
             $table->foreign('setor')->references('id')->on('setores');
             $table->foreign('tipo_tarefas')->references('id')->on('tipo_tarefas');
-            $table->foreign('user')->references('id')->on('users');
+            $table->foreign('usuario')->references('id')->on('users');
 
             $table->timestamps();
         });

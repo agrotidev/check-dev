@@ -19,7 +19,7 @@ class GruposSeed extends Seeder
         DB::table('grupos')->insert([
             [
                 'modulo' => 1,
-                'user' => 1,
+                'usuario' => 1,
                 'nome' => 'GRUPO PADRÃO',
                 'descricao' => 'Grupo Padrão',
                 'ativo' => true,
@@ -28,7 +28,7 @@ class GruposSeed extends Seeder
             ],
             [
                 'modulo' => 1,
-                'user' => 1,
+                'usuario' => 1,
                 'nome' => 'GRUPO NOVO',
                 'descricao' => 'Grupo Novo',
                 'ativo' => true,
@@ -37,7 +37,7 @@ class GruposSeed extends Seeder
             ],
             [
                 'modulo' => 1,
-                'user' => 1,
+                'usuario' => 1,
                 'nome' => 'GRUPO 3',
                 'descricao' => 'Grupo 3',
                 'ativo' => true,

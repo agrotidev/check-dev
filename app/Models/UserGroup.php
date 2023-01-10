@@ -9,11 +9,11 @@ class UserGroup extends Model
 {
     use HasFactory;
 
-    protected $table = 'user_group';
+    protected $table = 'grupo_usuarios';
 
     protected $fillable = [
-        'group_id',
-        'user_id',
+        'grupo',
+        'usuario',
     ];
 
 

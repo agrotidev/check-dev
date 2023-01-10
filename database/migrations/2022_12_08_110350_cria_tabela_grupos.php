@@ -16,14 +16,14 @@ return new class extends Migration
         Schema::create('grupos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('modulo');
-            $table->unsignedBigInteger('user');
+            $table->unsignedBigInteger('usuario');
 
             $table->string('nome');
             $table->string('descricao')->nullable(); 
             $table->boolean('ativo')->default(true);
 
             $table->foreign('modulo')->references('id')->on('setores');
-            $table->foreign('user')->references('id')->on('users');
+            $table->foreign('usuario')->references('id')->on('users');
 
             $table->timestamps();
             $table->softDeletes();

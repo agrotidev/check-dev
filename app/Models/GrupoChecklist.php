@@ -9,10 +9,10 @@ class ChecklistGroup extends Model
 {
     use HasFactory;
 
-    protected $table = 'checklist_group';
+    protected $table = 'grupo_checklists';
 
     protected $fillable = [
-        'checklist_id',
-        'group_id',
+        'checklist',
+        'grupo',
     ];
 }

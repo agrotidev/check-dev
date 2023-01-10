@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('checklist_group', function (Blueprint $table) {
+        Schema::create('grupo_usuarios', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('group_id');
-            $table->unsignedBigInteger('checklist_id');
+            $table->unsignedBigInteger('grupo');
+            $table->unsignedBigInteger('usuario');
 
-            $table->foreign('group_id')->references('id')->on('grupos');
-            $table->foreign('checklist_id')->references('id')->on('checklists');
+            $table->foreign('grupo')->references('id')->on('grupos');
+            $table->foreign('usuario')->references('id')->on('users');
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('checklist_group');
+        Schema::dropIfExists('grupo_usuarios');
     }
 };

@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class UserGroupSeed extends Seeder
+class GrupoChecklistSeed extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,18 +15,18 @@ class UserGroupSeed extends Seeder
      */
     public function run()
     {
-        DB::table('user_group')->insert([
+        DB::table('grupo_checklists')->insert([
             [
-                'group_id' => 1,
-                'user_id' => 1,
+                'checklist' => 1,
+                'grupo' => 1,
             ],
             [
-                'group_id' => 2,
-                'user_id' => 1,
+                'checklist' => 1,
+                'grupo' => 2,
             ],
             [
-                'group_id' => 1,
-                'user_id' => 1,
+                'checklist' => 3,
+                'grupo' => 1,
             ],
         ]);
     }

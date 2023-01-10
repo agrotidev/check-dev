@@ -12,17 +12,17 @@ class Grupo extends Model
 
     protected $table = 'grupos';
 
-    protected $fillable = ['modulo', 'user', 'nome', 'descricao', 'ativo'];
+    protected $fillable = ['modulo', 'usuario', 'nome', 'descricao', 'ativo'];
 
 
     public function usuarios()
     {
-        return $this->belongsToMany(User::class, 'user_group', 'group_id', 'user_id')->distinct();
+        return $this->belongsToMany(User::class, 'grupo_usuarios', 'grupo', 'usuario')->distinct();
     }
 
     public function checklists()
     {
-        return $this->belongsToMany(Checklist::class, 'checklist_group', 'group_id', 'checklist_id')->distinct();
+        return $this->belongsToMany(Checklist::class, 'grupo_checklists', 'grupo', 'checklist')->distinct();
     }
 
 

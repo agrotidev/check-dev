@@ -20,27 +20,27 @@ class ChecklistUsuariosSeed extends Seeder
         DB::table('checklist_usuarios')->insert([
             [
                 'checklist' => 1,
-                'user' => 2,
+                'usuario' => 2,
                 'grupo' => 1
             ],
             [
                 'checklist' => 2,
-                'user' => 2,
+                'usuario' => 2,
                 'grupo' => 1
             ],
             [
                 'checklist' => 2,
-                'user' => 1,
+                'usuario' => 1,
                 'grupo' => 3
             ],
             [
                 'checklist' => 2,
-                'user' => 2,
+                'usuario' => 2,
                 'grupo' => 3
             ],
             [
                 'checklist' => 1,
-                'user' => 1,
+                'usuario' => 1,
                 'grupo' => 3
             ],
         ]);
