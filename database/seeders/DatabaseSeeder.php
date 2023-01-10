@@ -27,9 +27,11 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeed::class);
         $this->call(CategoriaTarefa::class);
         $this->call(TipoTarefa::class);
-        $this->call(ChecklistGruposSeed::class);
+        $this->call(GruposSeed::class);
         $this->call(Checklist::class);
         $this->call(Tarefa::class);
         $this->call(ChecklistUsuariosSeed::class);
+        $this->call(UserGroupSeed::class);
+        $this->call(ChecklistGroupSeed::class);
     }
 }

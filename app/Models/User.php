@@ -43,21 +43,22 @@ class User extends Authenticatable
 
 
 
-    // public function grupos()
-    // {
-    //     return $this->belongsToMany(ChecklistGrupo::class, 'checklist_usuarios', 'id', 'user');
-    // }
 
     public function grupos()
     {
-        return $this->belongsToMany(ChecklistGrupo::class, 'checklist_usuarios', 'user', 'checklist');
+        return $this->belongsToMany(Grupo::class, 'user_group', 'user_id', 'group_id')->distinct();
     }
 
-    public function checklists()
-    {
-        return $this->belongsToMany(Checklist::class, 'checklist_usuarios', 'user', 'checklist')
-                    ->where('ativo', true)
-                    ->distinct();
-    }
+    // public function grupos()
+    // {
+    //     return $this->belongsToMany(ChecklistGrupo::class, 'checklist_usuarios', 'user', 'checklist');
+    // }
+
+    // public function checklists()
+    // {
+    //     return $this->belongsToMany(Checklist::class, 'checklist_usuarios', 'user', 'checklist')
+    //                 ->where('ativo', true)
+    //                 ->distinct();
+    // }
 
 }

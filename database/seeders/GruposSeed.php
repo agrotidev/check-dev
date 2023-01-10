@@ -7,7 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ChecklistGruposSeed extends Seeder
+class GruposSeed extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +16,7 @@ class ChecklistGruposSeed extends Seeder
      */
     public function run()
     {
-        DB::table('checklist_grupos')->insert([
+        DB::table('grupos')->insert([
             [
                 'modulo' => 1,
                 'user' => 1,
