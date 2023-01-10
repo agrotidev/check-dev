@@ -66,10 +66,15 @@ class Checklist extends Model
         //                 ->get();
     }
 
-
-    public function usuarios()
+    public function grupos()
     {
-        return $this->belongsToMany(User::class, 'checklist_usuarios', 'checklist', 'usuario');
+        return $this->belongsToMany(Grupo::class, 'grupo_checklists', 'checklist', 'grupo');
     }
+
+
+    // public function usuarios()
+    // {
+    //     return $this->belongsToMany(User::class, 'checklist_usuarios', 'checklist', 'usuario');
+    // }
 
 }

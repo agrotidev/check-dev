@@ -46,13 +46,32 @@ class User extends Authenticatable
 
     public function grupos()
     {
-        return $this->belongsToMany(Grupo::class, 'grupo_usuario', 'usuario', 'grupo')->distinct();
+        return $this->belongsToMany(Grupo::class, 'grupo_usuarios', 'usuario', 'grupo')->distinct();
     }
 
-    // public function grupos()
-    // {
-    //     return $this->belongsToMany(ChecklistGrupo::class, 'checklist_usuarios', 'user', 'checklist');
-    // }
+    public function checklists($id)
+    {
+        $user = User::find($id);
+
+        // return $user;
+        // $checklists = collect([]);
+        $grupos = $user->grupos()->get();
+        $checklists = [];
+
+        foreach ($grupos as $grupo) {
+            
+            $checklists_of_group = $grupo->checklists;
+            array_push($checklists, $checklists_of_group);
+            $checklists = array_unique($checklists);
+        }
+        return $checklists;
+
+        // $user = User::with('grupos.checklists')->find($id);
+        // $checklists = $user->grupos->flatMap(function($grupo){
+        //     return $grupo->checklists;
+        // });
+    }
+
 
     // public function checklists()
     // {
