@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Api\Off;
 use App\Api\ApiMessage;
 use App\Http\Controllers\Controller;
 use App\Models\CategoriaTarefas;
+use App\Models\Checklist;
 use App\Models\Departamento;
 use App\Models\Setor;
 use App\Models\Tarefa;
 use App\Models\TipoTarefa;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -27,7 +29,6 @@ class AuthController extends Controller
 
         $user = User::where('email', $request->email)->where('active', true)->first();
 
-        $checklist = $user;
 
         if (!$user) {
             $message = new ApiMessage('Usuario ou senha invalido');
@@ -43,6 +44,23 @@ class AuthController extends Controller
             $message = new ApiMessage('Usuario ou senha invalido');
             return response()->json($message->getMessage(), 200);            
          }
+
+        // $checklistIds = $user->grupos()->with(['checklists'])->get()->pluck('checklists.*.id')->unique();
+        // $checklists = Checklist::whereNotIn('id', $checklistIds)->get();
+
+
+        $checklistsIds = $user->grupos->map(function($grupo){
+            return $grupo->checklists;
+        });
+        $checklists = $checklistsIds->flatten()->unique('id');
+
+
+        // foreach ($grupos as $grupo) {
+            
+        //     $checklists_of_group = $grupo->checklists;
+        //     array_push($checklists, $checklists_of_group);
+        //     $checklists = array_unique($checklists);
+        // }
 
         // Genreate token
         $token = bcrypt($user->code.'.'.$user->email.'.'.$user->password_mobile);
@@ -77,7 +95,7 @@ class AuthController extends Controller
                 'categoria_tarefas' => $categoria_tarefas,
                 'tipo_tarefas' => $tipo_tarefas,
                 'tarefas' => $tarefas,
-                'checklists' => $checklist->checklists
+                'checklists' => $checklists
             ]
         ], 200);
     
