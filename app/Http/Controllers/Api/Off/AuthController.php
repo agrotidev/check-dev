@@ -40,7 +40,7 @@ class AuthController extends Controller
 
         if (!(Hash::check($credenciais['password'], $user->password_mobile))) {
             $message = new ApiMessage('Usuario ou senha invalido');
-            return response()->json($message->getMessage(), 200);            
+            return response()->json($message->getMessage(), 401);            
          }
 
         // Verifico todos os checklists do usuario pelo o grupo que ele pertence

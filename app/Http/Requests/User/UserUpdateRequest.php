@@ -16,7 +16,7 @@ class UserUpdateRequest extends FormRequest
         return [
             'setor' =>  'required|numeric',
             'name' => 'required|string|min:3',
-            'email' => 'required|email|unique:users,id,'.$this->user()->email,
+            'email' => 'required|email|unique:users,id',
         ];
     }
 
